@@ -1,0 +1,24 @@
+{
+  "name": "troc-edition",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "dcfvg <qwsx@dcfvg.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/g-u-i/troc-edition#readme",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "lodash": "^4.12.0",
+    "handlebars": "^4.0.5",
+    "bootstrap": "^3.3.6"
+  }
+}
