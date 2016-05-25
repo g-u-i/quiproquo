@@ -1,5 +1,8 @@
+
+var sheet = 'https://docs.google.com/spreadsheets/d/1oijI8VcXt3nLGybXGN27IyamyfXoaA9ewYVaxPtAQiU/pubhtml?gid=31114155&single=true'
+
 function init() {
-  Tabletop.init( { key: '0AmYzu_s7QHsmdDNZUzRlYldnWTZCLXdrMXlYQzVxSFE',
+  Tabletop.init( { key:sheet,
                    callback: onData,
                    simpleSheet: true } )
 }
@@ -9,7 +12,7 @@ init();
 
 function onData(data){
 
-  $('#mount').html(troc.test( {lines:data} ) );
+  $('#mount').html(troc.list( {lines:data} ) );
 
 }
 
