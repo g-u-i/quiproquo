@@ -24,6 +24,7 @@ gulp.task('js', function() {
       './bower_components/jquery/dist/jquery.js',
       './bower_components/lodash/lodash.js',
       './bower_components/handlebars/handlebars.js',
+      './bower_components/tabletop/src/tabletop.js'
       ],
       {base: 'bower_components/'}
     )
@@ -39,7 +40,7 @@ gulp.task('templates', function(){
     }))
     .pipe(wrap('Handlebars.template(<%= contents %>)'))
     .pipe(declare({
-      namespace: 'plateforme',
+      namespace: 'troc',
       noRedeclare: true, // Avoid duplicate declarations
     }))
     .pipe(concat('templates.js'))
