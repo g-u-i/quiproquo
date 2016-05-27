@@ -33,7 +33,6 @@ function dataCleanup(payload){
   return _.map(payload,function(d){
     for (var k in d) {
       d[
-
         k.toLowerCase()
           .replace('é', 'e')
           .replace('è', 'e')
