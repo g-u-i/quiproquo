@@ -12,6 +12,7 @@ var wrap = require('gulp-wrap');
 var declare = require('gulp-declare');
 var concat = require('gulp-concat');
 var plumber = require('gulp-plumber');
+var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('less', function() {
   return gulp.src('./assets/less/screen.less')
@@ -22,6 +23,10 @@ gulp.task('less', function() {
         }
     }))
     .pipe(less())
+    .pipe(autoprefixer({
+      browsers: ['last 3 versions'],
+      cascade: false
+    }))
     .pipe(gulp.dest('./assets/css'))
     .pipe(browserSync.stream());
 });

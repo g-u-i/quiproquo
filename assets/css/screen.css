@@ -123,17 +123,21 @@ body {
   font-weight: normal;
 }
 .page-default .half {
-  width: 135mm;
+  width: 130mm;
   height: calc(100% + 9mm);
   overflow: hidden;
   margin-top: -4.5mm;
 }
 .page-default .half:first-child {
   float: left;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
 }
 .page-default .half:last-child {
   float: right;
+  -webkit-writing-mode: sideways-lr;
+  -ms-writing-mode: sideways-lr;
   writing-mode: sideways-lr;
 }
 .book {
@@ -157,9 +161,14 @@ body {
 .book p {
   margin: 0;
 }
-.book .col {
-  height: 50%;
-  float: left;
+.book .text {
+  height: 100%;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 4.5mm;
+  -moz-column-gap: 4.5mm;
+  column-gap: 4.5mm;
 }
 .half:first-child .book {
   margin-right: 4.5mm;
@@ -169,14 +178,12 @@ body {
 }
 .half:first-child .book img {
   margin-top: 6mm;
+  -webkit-transform-origin: top right;
+  -ms-transform-origin: top right;
   transform-origin: top right;
+  -webkit-transform: rotate(90deg) translateX(100%);
+  -ms-transform: rotate(90deg) translateX(100%);
   transform: rotate(90deg) translateX(100%);
-}
-.half:first-child .book .col.col-a {
-  padding-bottom: 2.25mm;
-}
-.half:first-child .book .col.col-b {
-  padding-top: 2.25mm;
 }
 .half:first-child .book h2 {
   margin-left: 1em;
@@ -189,23 +196,17 @@ body {
 }
 .half:last-child .book img {
   margin-bottom: 6mm;
+  -webkit-transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
   transform-origin: bottom left;
+  -webkit-transform: rotate(-90deg) translateY(100%);
+  -ms-transform: rotate(-90deg) translateY(100%);
   transform: rotate(-90deg) translateY(100%);
-}
-.half:last-child .book .col.col-a {
-  padding-top: 2.25mm;
-}
-.half:last-child .book .col.col-b {
-  padding-bottom: 2.25mm;
 }
 .half:last-child .book h2 {
   margin-right: 1em;
 }
 @media screen {
-  .page-default:first-of-type {
-    background: blue url('../img/catalogue troc-design.jpg') center no-repeat;
-    background-size: 297mm 210mm;
-  }
   .book {
     position: relative;
   }
@@ -218,5 +219,6 @@ body {
     bottom: 4.5mm;
     left: 0;
     box-shadow: 0 0 0 1px cyan inset;
+    pointer-events: none;
   }
 }

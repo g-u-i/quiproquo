@@ -34,7 +34,7 @@
           <img data-src="{{nom_image}}" src="./assets/img/P1160264.JPG" alt="" />
         </figure>
 
-        <div class="col col-a">
+        <div class="text">
 
           <h3>{{auteur}}</h3>
           <h2>{{titre}}</h2>
@@ -47,11 +47,6 @@
           <p><span class="pages">{{nombre_de_pages}} pages</span></p>
           <p><span class="dimension">{{largeur}} × {{hauteur}} mm</span></p>
           <p><span class="quantity">{{nombre_d_exemplaires}} examplaires</span></p>
-
-        </div>
-
-        <div class="col col-b">
-
           {{#ifOr technique_d_impression mode_colorimetrique }}
           <p>
             {{#if technique_d_impression}}<span class="technics">impression {{technique_d_impression}},</span>{{/if}}
@@ -59,7 +54,6 @@
           </p>
           {{/ifOr}}
           {{#if reliure}}<p><span class="binding">reliure {{reliure}}</span></p>{{/if}}
-          {{#if technique_d_impression}}<p><span class="technics">impression {{technique_d_impression}}</span></p>{{/if}}
           {{#if dans_la_meme_collection}}<p><span class="same_collection">dans la même collection : <em>{{dans_la_meme_collection}}</em></span></p>{{/if}}
           {{#if du_meme_auteur}}<p><span class="same_author">du même auteur : <em>{{du_meme_auteur}}</em></span></p>{{/if}}
 

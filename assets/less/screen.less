@@ -26,7 +26,7 @@ body {
 .page-default {
 
   .half {
-    width: 135mm;
+    width: 130mm;
     height: calc(100% ~'+' @gutter);
     overflow: hidden;
     &:first-child {
@@ -62,9 +62,10 @@ body {
     margin: 0;
   }
 
-  .col {
-    height: 50%;
-    float: left;
+  .text {
+    height: 100%;
+    column-count: 2;
+    column-gap: @book-vertical-gutter;
   }
 
   .half:first-child & {
@@ -75,10 +76,6 @@ body {
       margin-top: @book-img-gutter;
       transform-origin: top right;
       transform: rotate(90deg) translateX(100%);
-    }
-    .col {
-      &.col-a { padding-bottom: @book-vertical-gutter/2; }
-      &.col-b { padding-top: @book-vertical-gutter/2; }
     }
     h2 {
       margin-left: 1em;
@@ -93,10 +90,6 @@ body {
       transform-origin: bottom left;
       transform: rotate(-90deg) translateY(100%);
     }
-    .col {
-      &.col-a { padding-top: @book-vertical-gutter/2; }
-      &.col-b { padding-bottom: @book-vertical-gutter/2; }
-    }
     h2 {
       margin-right: 1em;
     }
@@ -109,8 +102,8 @@ body {
 
   .page-default:first-of-type {
 
-    background: blue url('../img/catalogue troc-design.jpg') center no-repeat;
-    background-size: @sheet-width @sheet-height;
+    // background: blue url('../img/catalogue troc-design.jpg') center no-repeat;
+    // background-size: @sheet-width @sheet-height;
 
   }
 
@@ -122,6 +115,7 @@ body {
       position: absolute;
       top: @gutter/2; right: 0; bottom: @gutter/2; left: 0;
       box-shadow: 0 0 0 1px cyan inset;
+      pointer-events: none;
     }
   }
 
