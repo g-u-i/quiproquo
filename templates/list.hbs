@@ -1,25 +1,76 @@
-{{debug}}
+{{#each pages}}
+<section class="page page-default page-{{@index}}">
+  <div class="content">
 
+    {{#each this}}
+    <div class="half half-{{@index}}">
 
-{{#each lines}}
+      {{!--
+        book :
+          - numero_livre*
+          - horodateur*
+          - auteur*
+          - titre*
+          - editeur
+          - ville_d_impression*
+          - annee*
+          - nombre_de_pages*
+          - collection
+          - largeur*
+          - hauteur*
+          - nombre_d_exemplaires*
+          - technique_d_impression
+          - mode_colorimetrique
+          - reliure
+          - dans_la_meme_collection
+          - du_meme_auteur
+          - nom_image
+      --}}
+      {{#each this}}
 
-  <li>{{horodateur}}</li>
-  <li>{{auteur}}</li>
-  <h1>{{titre}}</h1>
-  <li>{{editeurs}}</li>
-  <li>{{ville_impression}}</li>
-  <li>{{annee}}</li>
-  <li>{{nb_pages}}</li>
-  <li>{{collection}}</li>
-  <li>{{largeur}}</li>
-  <li>{{hauteur}}</li>
-  <li>{{nb_ext}}</li>
-  <li>{{technique_impresion}}</li>
-  <li>{{mode_colo}}</li>
-  <li>{{reliure}}</li>
-  <li>{{meme_collection}}</li>
-  <li>{{meme_auteur}}</li>
+      <article class="book book-{{@index}}">
 
-  <hr>
+        <figure>
+          <img data-src="{{nom_image}}" src="./assets/img/P1160264.JPG" alt="" />
+        </figure>
 
+        <div class="col col-a">
+
+          <h3>{{auteur}}</h3>
+          <h2>{{titre}}</h2>
+
+          <p>
+            {{#if editeur}}<span class="editor">{{editeur}}</span>,{{/if}}
+            <span class="town">{{ville_d_impression}}</span>,
+            <span class="year">{{annee}}</span>
+          </p>
+          <p><span class="pages">{{nombre_de_pages}} pages</span></p>
+          <p><span class="dimension">{{largeur}} × {{hauteur}} mm</span></p>
+          <p><span class="quantity">{{nombre_d_exemplaires}} examplaires</span></p>
+
+        </div>
+
+        <div class="col col-b">
+
+          {{#ifOr technique_d_impression mode_colorimetrique }}
+          <p>
+            {{#if technique_d_impression}}<span class="technics">impression {{technique_d_impression}},</span>{{/if}}
+            {{#if mode_colorimetrique}}<span class="color">{{mode_colorimetrique}}</span>{{/if}}
+          </p>
+          {{/ifOr}}
+          {{#if reliure}}<p><span class="binding">reliure {{reliure}}</span></p>{{/if}}
+          {{#if technique_d_impression}}<p><span class="technics">impression {{technique_d_impression}}</span></p>{{/if}}
+          {{#if dans_la_meme_collection}}<p><span class="same_collection">dans la même collection : <em>{{dans_la_meme_collection}}</em></span></p>{{/if}}
+          {{#if du_meme_auteur}}<p><span class="same_author">du même auteur : <em>{{du_meme_auteur}}</em></span></p>{{/if}}
+
+        </div>
+
+      </article>
+      {{/each}}
+
+    </div>
+    {{/each}}
+
+  </div>
+</section>
 {{/each}}

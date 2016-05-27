@@ -11,26 +11,33 @@ var handlebars = require('gulp-handlebars');
 var wrap = require('gulp-wrap');
 var declare = require('gulp-declare');
 var concat = require('gulp-concat');
+var plumber = require('gulp-plumber');
 
 gulp.task('less', function() {
-    return gulp.src('./assets/less/*.less')
-        .pipe(less())
-        .pipe(gulp.dest('./assets/css'))
-        .pipe(browserSync.stream());
+  return gulp.src('./assets/less/screen.less')
+    .pipe(plumber({
+        errorHandler: function (err) {
+          console.log(err);
+          this.emit('end');
+        }
+    }))
+    .pipe(less())
+    .pipe(gulp.dest('./assets/css'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('js', function() {
-    return gulp.src([
-      './bower_components/jquery/dist/jquery.js',
-      './bower_components/lodash/lodash.js',
-      './bower_components/handlebars/handlebars.js',
-      './bower_components/tabletop/src/tabletop.js'
-      ],
-      {base: 'bower_components/'}
-    )
-    .pipe(concat('all.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('./assets/js/'));
+  return gulp.src([
+    './bower_components/jquery/dist/jquery.js',
+    './bower_components/lodash/lodash.js',
+    './bower_components/handlebars/handlebars.js',
+    './bower_components/tabletop/src/tabletop.js'
+    ],
+    {base: 'bower_components/'}
+  )
+  .pipe(concat('all.min.js'))
+  .pipe(uglify())
+  .pipe(gulp.dest('./assets/js/'));
 });
 
 gulp.task('templates', function(){
@@ -48,32 +55,19 @@ gulp.task('templates', function(){
 });
 
 gulp.task('serve', function() {
-    browserSync.init({ server: "." });
+  browserSync.init({ server: "." });
 
-    gulp.watch('./assets/less/*.less', ['less']);
-    gulp.watch('./templates/*.hbs', ['templates']);
+  gulp.watch('./assets/less/*.less', ['less']);
+  gulp.watch('./templates/*.hbs', ['templates']);
 
-    gulp.watch("./templates/*.hbs").on('change', browserSync.reload);
-    gulp.watch("./*.html").on('change', browserSync.reload);
+  gulp.watch("./templates/*.hbs").on('change', browserSync.reload);
+  gulp.watch("./*.html").on('change', browserSync.reload);
 });
 
-// gulp.task( 'deploy', ['build'], function () {
-
-//     var conn = ftp.create(serverConfig);
-//     var globs = [
-//         './assets/src/**',
-//         './assets/css/**',
-//         './assets/images/**',
-//         './assets/js/**',
-//         './assets/fonts/**',
-//         './index.html'
-//     ];
-
-//     return gulp.src( globs, { base: '.', buffer: false } )
-//         .pipe( conn.newer( '/' ) ) // only upload newer files
-//         .pipe( conn.dest( '/' ) );
-// });
-
+gulp.task('watch', function() {
+  gulp.watch('./assets/less/*.less', ['less']);
+  gulp.watch('./templates/*.hbs', ['templates']);
+});
 
 gulp.task('build',['less', 'js', 'templates']);
 gulp.task('default', ['build', 'watch']);
