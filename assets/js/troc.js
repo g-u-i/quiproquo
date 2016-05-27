@@ -10,8 +10,9 @@ function init() {
 init();
 
 
-function onData(data){
+function onData(payload){
 
+  var data = dataCleanup(payload);
   $('#mount').html(troc.list( {lines:data} ) );
 
 }
@@ -27,3 +28,13 @@ Handlebars.registerHelper('debug', function(optionalValue) {
     console.log(optionalValue);
   }
 });
+
+function dataCleanup(payload){
+  return _.map(payload,function(d){
+    for (var k in d) {
+      d[ k.replace(/[^a-z0-9]/gi, '_').toLowerCase() ] = d[k];
+      delete d[k];
+    }
+    return d;
+  })
+}
