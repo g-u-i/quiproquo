@@ -32,7 +32,15 @@ Handlebars.registerHelper('debug', function(optionalValue) {
 function dataCleanup(payload){
   return _.map(payload,function(d){
     for (var k in d) {
-      d[ k.replace(/[^a-z0-9]/gi, '_').toLowerCase() ] = d[k];
+      d[
+
+        k.toLowerCase()
+          .replace('é', 'e')
+          .replace('è', 'e')
+          .replace('ê', 'e')
+          .replace('(s)', '')
+          .replace(/[^a-z0-9]/gi, '_')
+           ] = d[k];
       delete d[k];
     }
     return d;
