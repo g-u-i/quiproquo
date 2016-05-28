@@ -1,16 +1,39 @@
 // Params
 var registrations = 'https://docs.google.com/spreadsheets/d/1oijI8VcXt3nLGybXGN27IyamyfXoaA9ewYVaxPtAQiU/pubhtml'
 var exchanges = 'https://docs.google.com/spreadsheets/d/17hYYlPaNvJFRN32fnnwBHdRGyZmKWlet3_qDrX0OvSo/pubhtml'
+var images_path = './images/';
+var images_registration_folder = 'index/';
+var images_exchange_folder = 'exchanges/';
 
 // Functions / Handlebars
 function init() {
   Tabletop.init({ key: registrations,
+                  debug: true,
                   callback: onRegistrationsLoad,
                   simpleSheet: false })
   Tabletop.init({ key: exchanges,
                   callback: onExchangesLoad,
                   simpleSheet: false })
 }
+
+$.fn.updateImages = function(folder_path)
+{
+  return this.each(function() {
+
+    var $img = $(this);
+
+    if ( $img.data('src').length === 0 )
+      return;
+
+    var path = folder_path + $img.data('src');
+    $.get(path).done(function(){
+      $img.attr('src', path);
+    }).fail(function(){
+      console.log(path, ' n’existe pas');
+    });
+
+  });
+};
 
 Handlebars.registerHelper('debug', function(optionalValue)
 {
@@ -55,7 +78,7 @@ function dataCleanup(payload)
 
 // --------- On load ---------
 function onRegistrationsLoad(payload){
-  // console.log(payload); //Object { Contenus Froids: Object, Réponses au formulaire: Object }
+  console.log('REGISTRATIONS', payload); //Object { Contenus Froids: Object, Réponses au formulaire: Object }
 
   var informations = dataCleanup( payload['Contenus Froids'].elements );
   var data = dataCleanup( payload['Réponses au formulaire'].elements );
@@ -71,13 +94,15 @@ function onRegistrationsLoad(payload){
     troc.list_index({pages:pages})
   );
 
+  $('.page-index img').updateImages(images_path + images_registration_folder);
+
 }
 
 function onExchangesLoad(payload){
   // console.log(payload); //Object { Échanges: Object }
 
   var data = dataCleanup( payload['Échanges'].elements );
-  
+
   // Prepare pages
   // 2 books per page
   var pages = _.chunk(data, 2);
@@ -85,6 +110,8 @@ function onExchangesLoad(payload){
   $('body').append(
     troc.list_exchanges({pages:pages})
   );
+
+  $('.page-exchange img').updateImages(images_path + images_exchange_folder);
 
 }
 

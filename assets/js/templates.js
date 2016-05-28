@@ -29,7 +29,7 @@ this["troc"]["list_exchanges"] = Handlebars.template({"1":function(container,dep
 this["troc"]["list_index"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : {};
 
-  return "<section class=\"page page-default page-"
+  return "<section class=\"page page-default page-index page-"
     + container.escapeExpression(((helper = (helper = helpers.index || (data && data.index)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"index","hash":{},"data":data}) : helper)))
     + "\">\n  <div class=\"content\">\n\n"
     + ((stack1 = helpers.each.call(alias1,depth0,{"name":"each","hash":{},"fn":container.program(2, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")

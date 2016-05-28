@@ -116,12 +116,12 @@ body {
   h2, p {
     position: absolute;
     margin: 0;
+    text-shadow: 1pt 1pt 10pt rgba(255,255,255, 0.1);
   }
 
   h2 {
     width: @page-inner-height-mm;
     bottom: @gutter;
-    text-shadow: 0 0 30pt rgba(255, 255, 255, 0.2);
   }
 
   p {
@@ -167,16 +167,16 @@ body {
 
   }
 
-  .book {
-    position: relative;
-    &:before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0; right: 0; bottom: 0; left: 0;
-      box-shadow: 0 0 0 1px cyan inset;
-      pointer-events: none;
-    }
-  }
+  // .book {
+  //   position: relative;
+  //   &:before {
+  //     content: "";
+  //     display: block;
+  //     position: absolute;
+  //     top: 0; right: 0; bottom: 0; left: 0;
+  //     box-shadow: 0 0 0 1px cyan inset;
+  //     pointer-events: none;
+  //   }
+  // }
 
 }
