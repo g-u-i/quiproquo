@@ -1,0 +1,38 @@
+{{#each pages}}
+<section class="page page-default page-exchange page-{{@index}}">
+  <div class="content">
+
+    {{#each this}}
+    {{!--
+      exchange :
+        - image
+        - numero_du_livre_1
+        - numero_du_livre_2
+        - pourquoi_cet_echange
+    --}}
+    <div class="half half-{{@index}}">
+
+      <figure class="exchange">
+
+        <figcaption>
+
+          <h2 class="why">{{pourquoi_cet_echange}}</h2>
+          <p class="numero">
+            <span class="hide" aria-hidden=true>Échange de </span>
+            <span>{{numero_du_livre_1}}</span>
+            <span class="hide" aria-hidden=true> avec </span>
+            <span> {{numero_du_livre_2}}</span>
+          </p>
+
+        </figcaption>
+
+        <img data-src="{{image}}" src="./assets/img/P1160264.JPG" alt="" />
+
+      </figure>
+
+    </div>
+    {{/each}}
+
+  </div>
+</section>
+{{/each}}

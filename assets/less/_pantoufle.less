@@ -6,6 +6,8 @@
 @cover-inner-height: calc(100% ~"-" @cover-margin-top + @cover-margin-bottom);
 @page-inner-width: calc(100% ~"-" @page-margin-ext + @page-margin-int);
 @page-inner-height: calc(100% ~"-" @page-margin-top + @page-margin-bottom);
+@page-inner-width-mm: @page-width - @page-margin-ext - @page-margin-int;
+@page-inner-height-mm: @page-height - @page-margin-top - @page-margin-bottom;
 
 .page
 {

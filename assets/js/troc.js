@@ -1,10 +1,14 @@
 // Params
-var sheet = 'https://docs.google.com/spreadsheets/d/1oijI8VcXt3nLGybXGN27IyamyfXoaA9ewYVaxPtAQiU/pubhtml'
+var registrations = 'https://docs.google.com/spreadsheets/d/1oijI8VcXt3nLGybXGN27IyamyfXoaA9ewYVaxPtAQiU/pubhtml'
+var exchanges = 'https://docs.google.com/spreadsheets/d/17hYYlPaNvJFRN32fnnwBHdRGyZmKWlet3_qDrX0OvSo/pubhtml'
 
 // Functions / Handlebars
 function init() {
-  Tabletop.init({ key:sheet,
-                  callback: onData,
+  Tabletop.init({ key: registrations,
+                  callback: onRegistrationsLoad,
+                  simpleSheet: false })
+  Tabletop.init({ key: exchanges,
+                  callback: onExchangesLoad,
                   simpleSheet: false })
 }
 
@@ -34,14 +38,15 @@ function dataCleanup(payload)
 {
   return _.map(payload,function(d){
     for (var k in d) {
-      d[
-        k.toLowerCase()
-          .replace('é', 'e')
-          .replace('è', 'e')
-          .replace('ê', 'e')
-          .replace('(s)', '')
-          .replace(/[^a-z0-9]/gi, '_')
-      ] = d[k];
+      if( k == "image" ) continue; // Don’t know why, but this key disapear with the regex.
+      var nk = k.toLowerCase()
+      .replace('é', 'e')
+      .replace('è', 'e')
+      .replace('ê', 'e')
+      .replace('(s)', '')
+      .replace(/\s*\?\s*/g, '')
+      .replace(/[^a-z0-9]/gi, '_')
+      d[nk] = d[k];
       delete d[k];
     }
     return d;
@@ -49,21 +54,37 @@ function dataCleanup(payload)
 }
 
 // --------- On load ---------
-function onData(payload){
-  // console.log(payload); //Object { Contenus Froids: Object, Échanges: Object, Réponses au formulaire: Object }
+function onRegistrationsLoad(payload){
+  // console.log(payload); //Object { Contenus Froids: Object, Réponses au formulaire: Object }
 
   var informations = dataCleanup( payload['Contenus Froids'].elements );
-  var lines = dataCleanup( payload['Réponses au formulaire'].elements );
-  var exchange = dataCleanup( payload['Échanges'].elements );
+  var data = dataCleanup( payload['Réponses au formulaire'].elements );
 
   // Prepare pages
-  var pages = _.chunk(lines, 12);
+  // 2×6 books per page
+  var pages = _.chunk(data, 12);
   _.forEach(pages, function(value, key) {
     pages[key] = _.chunk(value, 6);
   });
 
+  $('body').prepend(
+    troc.list_index({pages:pages})
+  );
+
+}
+
+function onExchangesLoad(payload){
+  // console.log(payload); //Object { Échanges: Object }
+
+  var data = dataCleanup( payload['Échanges'].elements );
+  // var data = payload['Échanges'].elements;
+
+  // Prepare pages
+  // 2 books per page
+  var pages = _.chunk(data, 2);
+
   $('body').append(
-    troc.list({pages:pages})
+    troc.list_exchanges({pages:pages})
   );
 
 }
