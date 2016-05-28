@@ -77,8 +77,7 @@ function onExchangesLoad(payload){
   // console.log(payload); //Object { Échanges: Object }
 
   var data = dataCleanup( payload['Échanges'].elements );
-  // var data = payload['Échanges'].elements;
-
+  
   // Prepare pages
   // 2 books per page
   var pages = _.chunk(data, 2);
