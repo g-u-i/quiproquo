@@ -215,7 +215,7 @@ body {
 .exchange p {
   position: absolute;
   margin: 0;
-  text-shadow: 1pt 1pt 10pt rgba(255, 255, 255, 0.1);
+  text-shadow: 1pt 1pt 30pt rgba(255, 255, 255, 0.5);
 }
 .exchange h2 {
   width: 192mm;

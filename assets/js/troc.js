@@ -1,14 +1,14 @@
 // Params
-var registrations = 'https://docs.google.com/spreadsheets/d/1oijI8VcXt3nLGybXGN27IyamyfXoaA9ewYVaxPtAQiU/pubhtml'
+var registrations = 'https://docs.google.com/spreadsheets/d/1oijI8VcXt3nLGybXGN27IyamyfXoaA9ewYVaxPtAQiU/pubhtml?ifh=doaihdiao'
 var exchanges = 'https://docs.google.com/spreadsheets/d/17hYYlPaNvJFRN32fnnwBHdRGyZmKWlet3_qDrX0OvSo/pubhtml'
-var images_path = './images/';
+// var images_path = './images/';
+var images_path = './photos/';
 var images_registration_folder = 'index/';
 var images_exchange_folder = 'exchanges/';
 
 // Functions / Handlebars
 function init() {
   Tabletop.init({ key: registrations,
-                  debug: true,
                   callback: onRegistrationsLoad,
                   simpleSheet: false })
   Tabletop.init({ key: exchanges,
@@ -30,6 +30,30 @@ $.fn.updateImages = function(folder_path)
       $img.attr('src', path);
     }).fail(function(){
       console.log(path, ' n’existe pas');
+    });
+
+  });
+};
+$.fn.updateImagesUnknowed = function(folder_path)
+{
+  return this.each(function() {
+
+    var $img = $(this);
+
+    if ( $img.data('src1').length === 0 || $img.data('src2').length === 0 )
+      return;
+
+    var path1= folder_path + $img.data('src1') + '-' + $img.data('src2') + '.JPG';
+    $.get(path1).done(function(){
+      $img.attr('src', path1);
+    }).fail(function(){
+      console.log(path1, ' n’existe pas');
+    });
+    var path2 = folder_path + $img.data('src2') + '-' + $img.data('src1') + '.JPG';
+    $.get(path2).done(function(){
+      $img.attr('src', path2);
+    }).fail(function(){
+      console.log(path2, ' n’existe pas');
     });
 
   });
@@ -111,7 +135,7 @@ function onExchangesLoad(payload){
     troc.list_exchanges({pages:pages})
   );
 
-  $('.page-exchange img').updateImages(images_path + images_exchange_folder);
+  $('.page-exchange img').updateImagesUnknowed(images_path + images_exchange_folder);
 
 }
 
