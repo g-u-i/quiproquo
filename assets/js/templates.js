@@ -51,7 +51,7 @@ this["troc"]["list_index"] = Handlebars.template({"1":function(container,depth0,
     + alias4(((helper = (helper = helpers.index || (data && data.index)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"index","hash":{},"data":data}) : helper)))
     + "\">\n\n        <figure>\n          <img data-src=\""
     + alias4(((helper = (helper = helpers.numero_livre || (depth0 != null ? depth0.numero_livre : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"numero_livre","hash":{},"data":data}) : helper)))
-    + ".JPG\" src=\"./assets/img/placeholder.gif\" alt=\"\" />\n        </figure>\n\n        <div class=\"text\">\n\n          <h3>"
+    + ".jpg\" src=\"./assets/img/placeholder.gif\" alt=\"\" />\n        </figure>\n\n        <div class=\"text\">\n\n          <h3>"
     + alias4(((helper = (helper = helpers.auteur || (depth0 != null ? depth0.auteur : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"auteur","hash":{},"data":data}) : helper)))
     + "</h3>\n          <h2>"
     + alias4(((helper = (helper = helpers.titre || (depth0 != null ? depth0.titre : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"titre","hash":{},"data":data}) : helper)))

@@ -43,13 +43,13 @@ $.fn.updateImagesUnknowed = function(folder_path)
     if ( $img.data('src1').length === 0 || $img.data('src2').length === 0 )
       return;
 
-    var path1= folder_path + $img.data('src1') + '-' + $img.data('src2') + '.JPG';
+    var path1= folder_path + $img.data('src1') + '-' + $img.data('src2') + '.jpg';
     $.get(path1).done(function(){
       $img.attr('src', path1);
     }).fail(function(){
       console.log(path1, ' n’existe pas');
     });
-    var path2 = folder_path + $img.data('src2') + '-' + $img.data('src1') + '.JPG';
+    var path2 = folder_path + $img.data('src2') + '-' + $img.data('src1') + '.jpg';
     $.get(path2).done(function(){
       $img.attr('src', path2);
     }).fail(function(){
