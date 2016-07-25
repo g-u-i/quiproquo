@@ -81,6 +81,12 @@ Handlebars.registerHelper('ifOr', function(a, b, block)
     return block.fn(this); }
 });
 
+Handlebars.registerHelper('ifAnd', function(a, b, block)
+{
+  if( a && b ) {
+    return block.fn(this); }
+});
+
 function dataCleanup(payload)
 {
   return _.map(payload,function(d){

@@ -63,20 +63,18 @@ this["troc"]["list_index"] = Handlebars.template({"1":function(container,depth0,
     + alias4(((helper = (helper = helpers.annee || (depth0 != null ? depth0.annee : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"annee","hash":{},"data":data}) : helper)))
     + "</span>\n          </p>\n          <p><span class=\"pages\">"
     + alias4(((helper = (helper = helpers.nombre_de_pages || (depth0 != null ? depth0.nombre_de_pages : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"nombre_de_pages","hash":{},"data":data}) : helper)))
-    + " pages</span></p>\n          <p><span class=\"dimension\">"
-    + alias4(((helper = (helper = helpers.largeur || (depth0 != null ? depth0.largeur : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"largeur","hash":{},"data":data}) : helper)))
-    + "×"
-    + alias4(((helper = (helper = helpers.hauteur || (depth0 != null ? depth0.hauteur : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"hauteur","hash":{},"data":data}) : helper)))
-    + " mm</span></p>\n          <p><span class=\"quantity\">"
+    + " pages</span></p>\n          "
+    + ((stack1 = (helpers.ifAnd || (depth0 && depth0.ifAnd) || alias2).call(alias1,(depth0 != null ? depth0.largeur : depth0),(depth0 != null ? depth0.hauteur : depth0),{"name":"ifAnd","hash":{},"fn":container.program(6, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "\n          <p><span class=\"quantity\">"
     + alias4(((helper = (helper = helpers.nombre_d_exemplaires || (depth0 != null ? depth0.nombre_d_exemplaires : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"nombre_d_exemplaires","hash":{},"data":data}) : helper)))
-    + " examplaires</span></p>\n"
-    + ((stack1 = (helpers.ifOr || (depth0 && depth0.ifOr) || alias2).call(alias1,(depth0 != null ? depth0.technique_d_impression : depth0),(depth0 != null ? depth0.mode_colorimetrique : depth0),{"name":"ifOr","hash":{},"fn":container.program(6, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + " exemplaires</span></p>\n"
+    + ((stack1 = (helpers.ifOr || (depth0 && depth0.ifOr) || alias2).call(alias1,(depth0 != null ? depth0.technique_d_impression : depth0),(depth0 != null ? depth0.mode_colorimetrique : depth0),{"name":"ifOr","hash":{},"fn":container.program(8, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "          "
-    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.reliure : depth0),{"name":"if","hash":{},"fn":container.program(11, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.reliure : depth0),{"name":"if","hash":{},"fn":container.program(13, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "\n          "
-    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.dans_la_meme_collection : depth0),{"name":"if","hash":{},"fn":container.program(13, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.dans_la_meme_collection : depth0),{"name":"if","hash":{},"fn":container.program(15, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "\n          "
-    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.du_meme_auteur : depth0),{"name":"if","hash":{},"fn":container.program(15, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.du_meme_auteur : depth0),{"name":"if","hash":{},"fn":container.program(17, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "\n\n        </div>\n\n      </article>\n";
 },"4":function(container,depth0,helpers,partials,data) {
     var helper;
@@ -85,38 +83,46 @@ this["troc"]["list_index"] = Handlebars.template({"1":function(container,depth0,
     + container.escapeExpression(((helper = (helper = helpers.editeur || (depth0 != null ? depth0.editeur : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"editeur","hash":{},"data":data}) : helper)))
     + "</span>,";
 },"6":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+
+  return "<p><span class=\"dimension\">"
+    + alias4(((helper = (helper = helpers.largeur || (depth0 != null ? depth0.largeur : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"largeur","hash":{},"data":data}) : helper)))
+    + "×"
+    + alias4(((helper = (helper = helpers.hauteur || (depth0 != null ? depth0.hauteur : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"hauteur","hash":{},"data":data}) : helper)))
+    + " mm</span></p>";
+},"8":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=depth0 != null ? depth0 : {};
 
   return "          <p>\n            "
-    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.technique_d_impression : depth0),{"name":"if","hash":{},"fn":container.program(7, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.technique_d_impression : depth0),{"name":"if","hash":{},"fn":container.program(9, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "\n            "
-    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.mode_colorimetrique : depth0),{"name":"if","hash":{},"fn":container.program(9, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.mode_colorimetrique : depth0),{"name":"if","hash":{},"fn":container.program(11, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "\n          </p>\n";
-},"7":function(container,depth0,helpers,partials,data) {
+},"9":function(container,depth0,helpers,partials,data) {
     var helper;
 
   return "<span class=\"technics\">impression "
     + container.escapeExpression(((helper = (helper = helpers.technique_d_impression || (depth0 != null ? depth0.technique_d_impression : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"technique_d_impression","hash":{},"data":data}) : helper)))
     + ",</span>";
-},"9":function(container,depth0,helpers,partials,data) {
+},"11":function(container,depth0,helpers,partials,data) {
     var helper;
 
   return "<span class=\"color\">"
     + container.escapeExpression(((helper = (helper = helpers.mode_colorimetrique || (depth0 != null ? depth0.mode_colorimetrique : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"mode_colorimetrique","hash":{},"data":data}) : helper)))
     + "</span>";
-},"11":function(container,depth0,helpers,partials,data) {
+},"13":function(container,depth0,helpers,partials,data) {
     var helper;
 
   return "<p><span class=\"binding\">reliure "
     + container.escapeExpression(((helper = (helper = helpers.reliure || (depth0 != null ? depth0.reliure : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"reliure","hash":{},"data":data}) : helper)))
     + "</span></p>";
-},"13":function(container,depth0,helpers,partials,data) {
+},"15":function(container,depth0,helpers,partials,data) {
     var helper;
 
   return "<p><span class=\"same_collection\">dans la même collection : <em>"
     + container.escapeExpression(((helper = (helper = helpers.dans_la_meme_collection || (depth0 != null ? depth0.dans_la_meme_collection : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"dans_la_meme_collection","hash":{},"data":data}) : helper)))
     + "</em></span></p>";
-},"15":function(container,depth0,helpers,partials,data) {
+},"17":function(container,depth0,helpers,partials,data) {
     var helper;
 
   return "<p><span class=\"same_author\">du même auteur : <em>"
