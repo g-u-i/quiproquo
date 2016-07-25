@@ -131,10 +131,12 @@ body {
   font-weight: normal;
   font-size: 30pt;
   text-align: center;
+  color: white;
 }
 .exchange p {
   font-size: 30pt;
   text-align: right;
+  color: white;
 }
 .page-default .content {
   position: relative !important;
@@ -218,8 +220,15 @@ body {
   text-shadow: 1pt 1pt 30pt rgba(255, 255, 255, 0.5);
 }
 .exchange h2 {
-  width: 192mm;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 174mm;
   bottom: 9mm;
+  box-shadow: 0 0 1em 1em rgba(50, 0, 20, 0.1);
+  background-color: rgba(50, 0, 20, 0.1);
+  text-shadow: 0px 0px 0.25em rgba(50, 0, 20, 0.3);
 }
 .exchange p {
   top: 9mm;
