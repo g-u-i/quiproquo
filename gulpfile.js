@@ -18,7 +18,7 @@ gulp.task('less', function() {
   return gulp.src('./assets/less/screen.less')
     .pipe(plumber({
         errorHandler: function (err) {
-          console.log(err);
+          console.log(err.Error);
           this.emit('end');
         }
     }))
@@ -47,6 +47,12 @@ gulp.task('js', function() {
 
 gulp.task('templates', function(){
   gulp.src('./templates/*.hbs')
+    .pipe(plumber({
+        errorHandler: function (err) {
+          console.log(err.name, ": ", err.message, "\nin `", err.fileName, "`");
+          this.emit('end');
+        }
+    }))
     .pipe(handlebars({
       handlebars: require('handlebars')
     }))
