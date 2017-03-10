@@ -22,7 +22,7 @@ this["troc"]["list_exchanges"] = Handlebars.template({"1":function(container,dep
     + alias4(((helper = (helper = helpers.numero_du_livre_1 || (depth0 != null ? depth0.numero_du_livre_1 : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"numero_du_livre_1","hash":{},"data":data}) : helper)))
     + "\" data-src2=\""
     + alias4(((helper = (helper = helpers.numero_du_livre_2 || (depth0 != null ? depth0.numero_du_livre_2 : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"numero_du_livre_2","hash":{},"data":data}) : helper)))
-    + "\" src=\"./assets/img/placeholder.gif\" alt=\"\" />\n\n      </figure>\n\n    </div>\n";
+    + "\" src=\"print/assets/img/placeholder.gif\" alt=\"\" />\n\n      </figure>\n\n    </div>\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
@@ -51,7 +51,7 @@ this["troc"]["list_index"] = Handlebars.template({"1":function(container,depth0,
     + alias4(((helper = (helper = helpers.index || (data && data.index)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"index","hash":{},"data":data}) : helper)))
     + "\">\n\n        <figure>\n          <img data-src=\""
     + alias4(((helper = (helper = helpers.numero_livre || (depth0 != null ? depth0.numero_livre : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"numero_livre","hash":{},"data":data}) : helper)))
-    + ".jpg\" src=\"./assets/img/placeholder.gif\" alt=\"\" />\n        </figure>\n\n        <div class=\"text\">\n\n          <h3>"
+    + ".jpg\" src=\"print/assets/img/placeholder.gif\" alt=\"\" />\n        </figure>\n\n        <div class=\"text\">\n\n          <h3>"
     + alias4(((helper = (helper = helpers.auteur || (depth0 != null ? depth0.auteur : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"auteur","hash":{},"data":data}) : helper)))
     + "</h3>\n          <h2>"
     + alias4(((helper = (helper = helpers.titre || (depth0 != null ? depth0.titre : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"titre","hash":{},"data":data}) : helper)))
