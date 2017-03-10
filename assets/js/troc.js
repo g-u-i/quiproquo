@@ -2,7 +2,7 @@
 var registrations = 'https://docs.google.com/spreadsheets/d/1oijI8VcXt3nLGybXGN27IyamyfXoaA9ewYVaxPtAQiU/pubhtml?ifh=doaihdiao'
 var exchanges = 'https://docs.google.com/spreadsheets/d/17hYYlPaNvJFRN32fnnwBHdRGyZmKWlet3_qDrX0OvSo/pubhtml'
 // var images_path = './images/';
-var images_path = 'photos/';
+var images_path = 'print/photos/';
 var images_registration_folder = 'index/';
 var images_exchange_folder = 'exchanges/';
 
