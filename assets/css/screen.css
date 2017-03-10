@@ -151,19 +151,15 @@ body {
 }
 .page-default .half:nth-child(1) {
   left: 0;
-  -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-transform: rotate(90deg) translateY(-100%);
   -ms-transform: rotate(90deg) translateY(-100%);
   transform: rotate(90deg) translateY(-100%);
 }
 .page-default .half:nth-child(2) {
   right: 0;
-  -webkit-transform-origin: top right;
   -ms-transform-origin: top right;
   transform-origin: top right;
-  -webkit-transform: rotate(-90deg) translateY(-100%);
   -ms-transform: rotate(-90deg) translateY(-100%);
   transform: rotate(-90deg) translateY(-100%);
 }
@@ -194,10 +190,8 @@ body {
   margin-bottom: 1em;
 }
 .book .text {
-  -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
-  -webkit-column-gap: 4.5mm;
   -moz-column-gap: 4.5mm;
   column-gap: 4.5mm;
 }
@@ -221,7 +215,6 @@ body {
 }
 .exchange h2 {
   left: 50%;
-  -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   width: 174mm;
@@ -249,7 +242,6 @@ body {
   height: 50mm;
   background: url('../img/fleches.svg') center no-repeat;
   background-size: auto 60%;
-  -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
