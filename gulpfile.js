@@ -15,7 +15,7 @@ var plumber = require('gulp-plumber');
 var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('less', function() {
-  return gulp.src('./assets/less/screen.less')
+  return gulp.src('./assets/less/main.less')
     .pipe(plumber({
         errorHandler: function (err) {
           console.log(err.Error);

@@ -1,6 +1,11 @@
+/* =Pantoufle
+ * v0.2.
+ * ---------------------------------------------------------------------------*/
+
+// Main variables
 @import '_pantoufle.variables.less';
 
-/* Additional variables */
+// Additional variables
 @interface-padding: 1cm;
 @cover-inner-width: calc(100% ~"-" @cover-margin-ext + @cover-margin-int);
 @cover-inner-height: calc(100% ~"-" @cover-margin-top + @cover-margin-bottom);
@@ -8,6 +13,17 @@
 @page-inner-height: calc(100% ~"-" @page-margin-top + @page-margin-bottom);
 @page-inner-width-mm: @page-width - @page-margin-ext - @page-margin-int;
 @page-inner-height-mm: @page-height - @page-margin-top - @page-margin-bottom;
+
+.hide {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
 
 .page
 {
@@ -76,7 +92,7 @@
 }
 
 /* =Screen
-  -----------------------------------------------------------------------------*/
+*/
 @media screen {
 
   *, *::after, *::before {
@@ -196,7 +212,7 @@
 
 
 /* =Print
-  -----------------------------------------------------------------------------*/
+*/
 @media print {
 
   *, *::after, *::before {

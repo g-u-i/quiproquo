@@ -1,7 +1,18 @@
 @import '../fonts/Aileron/aileron.css';
 @import '../fonts/Savate/stylesheet.css';
-/* VARIABLES */
-/* Additional variables */
+/* =Pantoufle
+ * v0.2.
+ * ---------------------------------------------------------------------------*/
+.hide {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
 .page {
   position: relative;
   float: left;
@@ -30,7 +41,7 @@
   margin-right: 9mm;
 }
 /* =Screen
-  -----------------------------------------------------------------------------*/
+*/
 @media screen {
   *,
   *::after,
@@ -89,7 +100,7 @@
   }
 }
 /* =Print
-  -----------------------------------------------------------------------------*/
+*/
 @media print {
   *,
   *::after,
@@ -110,6 +121,9 @@
     height: 100vh;
   }
 }
+/* =Theme
+ * Quiproquo
+ * ---------------------------------------------------------------------------*/
 body {
   font-family: 'Aileron', serif;
   font-size: 6pt;
@@ -244,16 +258,4 @@ body {
   background-size: auto 60%;
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
-}
-.hide {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-@media screen {
 }
