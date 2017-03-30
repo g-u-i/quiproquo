@@ -16,29 +16,33 @@
 .page {
   position: relative;
   float: left;
-  width: 297mm;
-  height: 210mm;
+  width: 210mm;
+  height: 297mm;
   overflow: hidden;
 }
 .page .content {
   position: static !important;
   overflow: hidden;
-  width: calc(100% - 18mm);
-  height: calc(100% - 18mm);
-  margin-top: 9mm;
-  margin-bottom: 9mm;
+  width: calc(100% - 40mm);
+  height: calc(100% - 40mm);
+  margin-top: 20mm;
+  margin-bottom: 20mm;
 }
 .page#cover .content {
-  width: calc(100% - 18mm);
-  height: calc(100% - 18mm);
-  margin-top: 9mm;
-  margin-right: 9mm;
-  margin-bottom: 9mm;
-  margin-left: 9mm;
+  width: calc(100% - 40mm);
+  height: calc(100% - 40mm);
+  margin-top: 20mm;
+  margin-right: 20mm;
+  margin-bottom: 20mm;
+  margin-left: 20mm;
 }
-.page.page-default .content {
-  margin-left: 9mm;
-  margin-right: 9mm;
+.page.page-default:nth-of-type(odd) .content {
+  margin-left: 20mm;
+  margin-right: 20mm;
+}
+.page.page-default:nth-of-type(even) .content {
+  margin-left: 20mm;
+  margin-right: 20mm;
 }
 /* =Screen
 */
@@ -55,7 +59,7 @@
   }
   body {
     margin: 0;
-    min-width: 327mm;
+    min-width: 450mm;
     background-color: #606060;
   }
   body.preview {
@@ -69,34 +73,40 @@
   .page:last-child {
     margin-bottom: 1cm;
   }
-  .page:before {
+  .page::before {
     content: "";
     display: block;
     position: absolute;
     z-index: 2;
-    top: 9mm;
-    bottom: 9mm;
+    top: 20mm;
+    bottom: 20mm;
     border: 1px solid;
     border-color: #60c600 #738a5e;
     pointer-events: none;
   }
-  .page#cover {
-    margin-right: 1cm;
+  .page:first-of-type {
+    margin-right: 1cm !important;
+    margin-left: 220mm !important;
+  }
+  .page:first-of-type::before {
+    top: 20mm !important;
+    right: 20mm !important;
+    bottom: 20mm !important;
+    left: 20mm !important;
+  }
+  .page.page-default:nth-of-type(odd) {
     margin-left: 1cm;
   }
-  .page#cover:before {
-    top: 9mm;
-    right: 9mm;
-    bottom: 9mm;
-    left: 9mm;
-  }
-  .page.page-default {
+  .page.page-default:nth-of-type(even) {
     margin-right: 1cm;
-    margin-left: 1cm;
   }
-  .page.page-default:before {
-    left: 9mm;
-    right: 9mm;
+  .page.page-default:nth-of-type(odd)::before {
+    left: 20mm;
+    right: 20mm;
+  }
+  .page.page-default:nth-of-type(even)::before {
+    left: 20mm;
+    right: 20mm;
   }
 }
 /* =Print
@@ -117,7 +127,7 @@
     margin: 0;
   }
   .page {
-    width: 100vw;
+    width: 50vw;
     height: 100vh;
   }
 }
@@ -125,137 +135,17 @@
  * Quiproquo
  * ---------------------------------------------------------------------------*/
 body {
-  font-family: 'Aileron', serif;
+  font-family: 'Fira Sans', serif;
   font-size: 6pt;
   line-height: 1.1;
 }
-.book h2 {
-  font-family: 'Savate', serif;
-  font-weight: normal;
-  font-style: italic;
-  font-size: 8pt;
-  line-height: 1;
-}
-.book h3 {
-  font-weight: normal;
-}
-.exchange h2 {
-  font-family: 'Savate', serif;
-  font-style: italic;
-  font-weight: normal;
-  font-size: 30pt;
-  text-align: center;
-  color: white;
-}
-.exchange p {
-  font-size: 30pt;
-  text-align: right;
-  color: white;
-}
-.page-default .content {
-  position: relative !important;
-}
-.page-default .half {
-  position: absolute;
-  top: 0;
-  width: 201mm;
-  height: 128mm;
-  overflow: hidden;
-  margin-top: -4.5mm;
-}
-.page-default .half:nth-child(1) {
-  left: 0;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -ms-transform: rotate(90deg) translateY(-100%);
-  transform: rotate(90deg) translateY(-100%);
-}
-.page-default .half:nth-child(2) {
-  right: 0;
-  -ms-transform-origin: top right;
-  transform-origin: top right;
-  -ms-transform: rotate(-90deg) translateY(-100%);
-  transform: rotate(-90deg) translateY(-100%);
-}
-.page-exchange .half {
-  overflow: visible !important;
-}
-.book {
-  float: left;
-  width: 33.33333333%;
-  height: 50%;
-  overflow: hidden;
-  padding-left: 4.5mm;
-  padding-right: 4.5mm;
-}
-.book figure {
-  margin: 4.5mm 6mm 2.25mm 6mm;
-}
-.book figure img {
-  width: 100%;
+.book img {
+  width: 10mm;
   height: auto;
 }
-.book h2,
-.book h3,
-.book p {
-  margin: 0;
-}
-.book h2 {
-  margin-bottom: 1em;
-}
-.book .text {
-  -moz-column-count: 2;
-  column-count: 2;
-  -moz-column-gap: 4.5mm;
-  column-gap: 4.5mm;
-}
-.exchange {
-  position: relative;
-  height: 100%;
-  margin: 0;
-  padding-left: 4.5mm;
-  padding-right: 4.5mm;
-}
-.exchange img {
-  width: 100%;
-  height: auto;
-  margin-top: 4.5mm;
-}
-.exchange h2,
-.exchange p {
-  position: absolute;
-  margin: 0;
-  text-shadow: 1pt 1pt 30pt rgba(255, 255, 255, 0.5);
-}
-.exchange h2 {
-  left: 50%;
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  width: 174mm;
-  bottom: 9mm;
-  box-shadow: 0 0 1em 1em rgba(50, 0, 20, 0.1);
-  background-color: rgba(50, 0, 20, 0.1);
-  text-shadow: 0px 0px 0.25em rgba(50, 0, 20, 0.3);
-}
-.exchange p {
-  top: 9mm;
-  right: 1em;
-}
-.exchange p span {
-  margin: 0 1em;
-}
-.exchange p:after {
-  content: '';
-  display: block;
-  position: absolute;
-  z-index: 1;
-  pointer-events: none;
-  right: 0;
-  bottom: .5em;
-  left: 0;
-  height: 50mm;
-  background: url('../img/fleches.svg') center no-repeat;
-  background-size: auto 60%;
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
+@media screen {
+  body {
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+  }
 }

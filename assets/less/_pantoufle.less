@@ -130,7 +130,7 @@
       box-shadow: 2px 2px 0px 1px #000, 0px 0px 0px 1px #000;
     }
 
-    &:before {
+    &::before {
       content: "";
       display: block;
       position: absolute;
@@ -144,23 +144,23 @@
 
   }
 
-  .page#cover
+  .page:first-of-type
   {
-    margin-right: @interface-padding;
+    margin-right: @interface-padding!important;
 
     & when (@page-width >= @sheet-width) {
-      margin-left: @interface-padding;
+      margin-left: @interface-padding!important;
     }
 
     & when (@page-width < @sheet-width) {
-      margin-left: @page-width + @interface-padding;
+      margin-left: @page-width + @interface-padding!important;
     }
 
-    &:before {
-      top: @cover-margin-top;
-      right: @cover-margin-int;
-      bottom: @cover-margin-bottom;
-      left: @cover-margin-ext;
+    &::before {
+      top: @cover-margin-top!important;
+      right: @cover-margin-int!important;
+      bottom: @cover-margin-bottom!important;
+      left: @cover-margin-ext!important;
     }
   }
 
@@ -173,7 +173,7 @@
       margin-left: @interface-padding;
 
       // --- U.I. Helper
-      &:before {
+      &::before {
         left: @page-margin-ext;
         right: @page-margin-int;
       }
@@ -195,11 +195,11 @@
       }
 
       // --- U.I. Helper
-      &:nth-of-type(odd):before {
+      &:nth-of-type(odd)::before {
         left: @page-margin-int;
         right: @page-margin-ext;
       }
-      &:nth-of-type(even):before {
+      &:nth-of-type(even)::before {
         left: @page-margin-ext;
         right: @page-margin-int;
       }
