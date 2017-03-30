@@ -1,6 +1,6 @@
 // Params
-var registrations = 'https://docs.google.com/spreadsheets/d/1oijI8VcXt3nLGybXGN27IyamyfXoaA9ewYVaxPtAQiU/pubhtml?ifh=doaihdiao'
-var exchanges = 'https://docs.google.com/spreadsheets/d/17hYYlPaNvJFRN32fnnwBHdRGyZmKWlet3_qDrX0OvSo/pubhtml'
+var registrations = 'https://docs.google.com/spreadsheets/d/1ymMzDeEbL34H5cVXFY9lVzfKJhmkFVjWpdUySuW5zYM/pubhtml'
+var exchanges = ''
 // var images_path = './images/';
 var images_path = 'print/photos/';
 var images_registration_folder = 'index/';
@@ -110,8 +110,8 @@ function dataCleanup(payload)
 function onRegistrationsLoad(payload){
   console.log('REGISTRATIONS', payload); //Object { Contenus Froids: Object, Réponses au formulaire: Object }
 
-  var informations = dataCleanup( payload['Contenus Froids'].elements );
-  var data = dataCleanup( payload['Réponses au formulaire'].elements );
+  // var informations = dataCleanup( payload['Contenus Froids'].elements );
+  var data = dataCleanup( payload['Réponses au formulaire 1'].elements );
 
   // Prepare pages
   // 2×6 books per page
