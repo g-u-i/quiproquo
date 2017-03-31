@@ -1,5 +1,4 @@
-@import '../fonts/Aileron/aileron.css';
-@import '../fonts/Savate/stylesheet.css';
+@import '../fonts/Fira/fira.css';
 /* =Pantoufle
  * v0.2.
  * ---------------------------------------------------------------------------*/
@@ -36,11 +35,11 @@
   margin-bottom: 20mm;
   margin-left: 20mm;
 }
-.page.page-default:nth-of-type(odd) .content {
+.page.page-default:nth-of-type(even) .content {
   margin-left: 20mm;
   margin-right: 20mm;
 }
-.page.page-default:nth-of-type(even) .content {
+.page.page-default:nth-of-type(odd) .content {
   margin-left: 20mm;
   margin-right: 20mm;
 }
@@ -82,7 +81,7 @@
     bottom: 20mm;
     border: 1px solid;
     border-color: #60c600 #738a5e;
-    pointer-events: none;
+    pointer-oddts: none;
   }
   .page:first-of-type {
     margin-right: 1cm !important;
@@ -94,17 +93,17 @@
     bottom: 20mm !important;
     left: 20mm !important;
   }
-  .page.page-default:nth-of-type(odd) {
+  .page.page-default:nth-of-type(even) {
     margin-left: 1cm;
   }
-  .page.page-default:nth-of-type(even) {
+  .page.page-default:nth-of-type(odd) {
     margin-right: 1cm;
   }
-  .page.page-default:nth-of-type(odd)::before {
+  .page.page-default:nth-of-type(even)::before {
     left: 20mm;
     right: 20mm;
   }
-  .page.page-default:nth-of-type(even)::before {
+  .page.page-default:nth-of-type(odd)::before {
     left: 20mm;
     right: 20mm;
   }
@@ -118,7 +117,7 @@
     box-sizing: border-box;
   }
   @page {
-    size: landscape;
+    size: portrait;
     margin: 0mm;
   }
   html,
@@ -127,7 +126,7 @@
     margin: 0;
   }
   .page {
-    width: 50vw;
+    width: 100vw;
     height: 100vh;
   }
 }
@@ -135,13 +134,197 @@
  * Quiproquo
  * ---------------------------------------------------------------------------*/
 body {
-  font-family: 'Fira Sans', serif;
-  font-size: 6pt;
-  line-height: 1.1;
+  font-family: "Fira Mono", serif;
 }
-.book img {
-  width: 10mm;
+.index {
+  height: 257mm;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  font-family: 'Fira Mono', monospace;
+  font-size: 10pt;
+  color: #888;
+}
+.index p {
+  margin: 0;
+}
+.index .photoitem {
+  margin: 0 7mm 13mm 0;
+}
+.index .photoitem p {
+  margin-top: 1em;
+  width: 52mm;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.index .photoitem .photo {
+  width: 52mm;
+  height: 34mm;
+  background-color: silver;
+}
+.index .titre {
+  color: #1A1A1A;
+}
+.index .nom,
+.index .city {
+  text-transform: capitalize;
+}
+.index .cote {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.index .legende {
+  width: 52mm;
+  margin-right: 7mm;
+  border-bottom: dashed 1pt #000;
+  padding-bottom: 7mm;
+  margin-bottom: 7mm;
+}
+.index .pagenb {
+  margin-bottom: 1em;
+}
+.page-cover h1 {
+  font-weight: bold;
+  font-size: 151.557pt;
+  position: absolute;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+  bottom: -0.93em;
+  line-height: 1;
+  left: 0;
+  margin: 0;
+  text-transform: uppercase;
+}
+.page-cover h2 {
+  font-weight: bold;
+  font-size: 151.557pt;
+  margin: 0;
+  line-height: 1;
+}
+.page-cover h3 {
+  font-weight: bold;
+  font-size: 37.452pt;
+  margin-bottom: 5mm;
+  margin-top: 0;
+}
+.page-cover h4 {
+  font-weight: medium;
+  font-size: 20pt;
+  margin: 0;
+}
+.page-cover .info {
+  position: absolute;
+  left: 115mm;
+  top: 160mm;
+}
+.page-cover .img10 {
+  position: absolute;
+  left: 100mm;
+  top: 180mm;
+}
+.page-cover .img2 {
+  position: absolute;
+  left: 140mm;
+  top: 100mm;
+}
+.page-cover .img3 {
+  position: absolute;
+  left: 50mm;
+  top: 70mm;
+}
+.page-cover .img4 {
+  position: absolute;
+  left: 120mm;
+  top: 60mm;
+}
+.page-cover .img5 {
+  position: absolute;
+  left: 50mm;
+  top: 135mm;
+}
+.page-cover .img6 {
+  position: absolute;
+  left: 85mm;
+  top: 20mm;
+}
+.page-cover .img7 {
+  position: absolute;
+  left: 45mm;
+  top: 60mm;
+}
+.page-cover .img8 {
+  position: absolute;
+  left: 35mm;
+  top: 190mm;
+}
+.page-cover .img9 {
+  position: absolute;
+  left: 115mm;
+  top: 160mm;
+}
+.page-edito {
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+}
+.page-edito h3,
+.page-edito p {
+  font-weight: bold;
+  font-size: 37.452pt;
+  margin-left: 50mm;
+}
+.page-edito h3 {
+  margin-top: 30mm;
+  margin-bottom: 0;
+}
+.page-edito p {
+  margin-top: 0;
+  margin-bottom: 5mm;
+}
+.page-edito--odd {
+  background-image: url("https://framapic.org/1jfoxh1A8wQZ/l1Q9yiGPTsbA.jpg");
+}
+.page-edito--even {
+  background-image: url("https://framapic.org/74fR8uItcE6Y/OoIFKsSPdAQL.jpg");
+}
+.page-ours {
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+}
+.page-ours h3,
+.page-ours p {
+  font-weight: bold;
+  font-size: 16.5pt;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 7mm;
+  margin-left: 50mm;
+}
+.page-ours h3:last-child,
+.page-ours p:last-child {
+  margin-bottom: 0;
+}
+.page-ours p.small {
+  font-size: 10pt;
+}
+.page-ours--odd {
+  background-image: url("https://framapic.org/99hakISC9rLm/l6Q87lGlW849.jpg");
+}
+.page-ours--even {
+  background-image: url("https://framapic.org/vaMtNEJJ9yLA/213V4m9jkbin.jpg");
+}
+.page-backcover .logo {
+  width: 45%;
   height: auto;
+  position: relative;
+  top: 115mm;
+  left: 65mm;
 }
 @media screen {
   body {

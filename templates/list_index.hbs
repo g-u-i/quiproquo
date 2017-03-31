@@ -2,65 +2,41 @@
 <section class="page page-default page-index page-{{@index}}">
   <div class="content">
 
+    <div class=index>
     {{#each this}}
-      {{!--
-        book :
-          - numero_livre*
-          - horodateur*
-          - auteur*
-          - titre*
-          - editeur
-          - ville_d_impression*
-          - annee*
-          - nombre_de_pages*
-          - collection
-          - largeur*
-          - hauteur*
-          - nombre_d_exemplaires*
-          - technique_d_impression
-          - mode_colorimetrique
-          - reliure
-          - dans_la_meme_collection
-          - du_meme_auteur
-          - nom_image
-      --}}
-      {{#each this}}
 
-      <article class="book book-{{@index}}">
-
-        <figure>
-          <img data-src="{{numero_livre}}.jpg" src="print/assets/img/placeholder.gif" alt="" />
-        </figure>
-
-        <div class="text">
-
-          <h3>{{auteur}}</h3>
-          <h2>{{titre}}</h2>
-
-          <p>
-            {{#if editeur}}<span class="editor">{{editeur}}</span>,{{/if}}
-            <span class="town">{{ville_d_impression}}</span>,
-            <span class="year">{{annee}}</span>
-          </p>
-          <p><span class="pages">{{nombre_de_pages}} pages</span></p>
-          {{#ifAnd largeur hauteur}}<p><span class="dimension">{{largeur}}×{{hauteur}} mm</span></p>{{/ifAnd}}
-          <p><span class="quantity">{{nombre_d_exemplaires}} exemplaires</span></p>
-          {{#ifOr technique_d_impression mode_colorimetrique }}
-          <p>
-            {{#if technique_d_impression}}<span class="technics">impression {{technique_d_impression}},</span>{{/if}}
-            {{#if mode_colorimetrique}}<span class="color">{{mode_colorimetrique}}</span>{{/if}}
-          </p>
-          {{/ifOr}}
-          {{#if reliure}}<p><span class="binding">reliure {{reliure}}</span></p>{{/if}}
-          {{#if dans_la_meme_collection}}<p><span class="same_collection">dans la même collection : <em>{{dans_la_meme_collection}}</em></span></p>{{/if}}
-          {{#if du_meme_auteur}}<p><span class="same_author">du même auteur : <em>{{du_meme_auteur}}</em></span></p>{{/if}}
-
-        </div>
-
-      </article>
-      {{/each}}
+      <div class="photoitem">
+        <img class="photo" data-src="{{numero_livre}}.jpg" src="print/assets/img/placeholder.gif" alt="" />
+        <p class="cote">{{numero_livre}}.{{largeur}}.{{hauteur}}.{{nombre_de_pages}}.{{{colorCode mode_colorimetrique}}}.{{nombre_d_exemplaires}}</p>
+      </div>
 
     {{/each}}
+    </div>
+
+  </div>
+</section>
+
+<section class="page page-default page-index page-{{@index}}">
+  <div class="content">
+
+    <div class="index">
+    {{#each this}}
+
+    <div class="legende">
+      <p class="cote">{{numero_livre}}.{{largeur}}.{{hauteur}}.{{nombre_de_pages}}.{{{colorCode mode_colorimetrique}}}.{{nombre_d_exemplaires}}</p>
+      <p class="nom">{{auteur}}</p>
+      <p class="titre">{{titre}}</p>
+      <p class="pagenb">{{nombre_de_pages}}p</p>
+
+      <p class="city">{{ville_d_impression}}</p>
+      <p class="date">{{annee}}</p>
+      <p class="size">{{largeur}}×{{hauteur}}mm</p>
+      <p class="technic">{{technique_d_impression}}, {{mode_colorimetrique}}</p>
+      <p class="reliure">{{reliure}}</p>
+    </div>
+
+    {{/each}}
+    </div>
 
   </div>
 </section>

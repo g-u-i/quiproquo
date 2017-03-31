@@ -1,19 +1,28 @@
 // Params
 var registrations = 'https://docs.google.com/spreadsheets/d/1ymMzDeEbL34H5cVXFY9lVzfKJhmkFVjWpdUySuW5zYM/pubhtml'
 var exchanges = ''
-// var images_path = './images/';
+
 var images_path = 'print/photos/';
 var images_registration_folder = 'index/';
 var images_exchange_folder = 'exchanges/';
 
 // Functions / Handlebars
 function init() {
+
+  // Add statics pages
+  addCover();
+  addEdito();
+  addOurs();
+  addBackcover();
+
+  // Add dynamics pages
   Tabletop.init({ key: registrations,
                   callback: onRegistrationsLoad,
                   simpleSheet: false })
   Tabletop.init({ key: exchanges,
                   callback: onExchangesLoad,
                   simpleSheet: false })
+
 }
 
 $.fn.updateImages = function(folder_path)
@@ -87,6 +96,27 @@ Handlebars.registerHelper('ifAnd', function(a, b, block)
     return block.fn(this); }
 });
 
+Handlebars.registerHelper('firstChar', function(a)
+{
+  var s = a.charAt(0);
+  return new Handlebars.SafeString(s)
+});
+
+Handlebars.registerHelper('colorCode', function(a)
+{
+  var s = "";
+  if ( a.search('4 couleurs') ) {
+    s += 'C';
+  }
+  if ( a.search('niveaux de gris') ) {
+    s += 'NB';
+  }
+  if ( a.search('Autre') ) {
+    s += '+';
+  }
+  return new Handlebars.SafeString(s)
+});
+
 function dataCleanup(payload)
 {
   return _.map(payload,function(d){
@@ -106,6 +136,40 @@ function dataCleanup(payload)
   })
 }
 
+
+
+// --------- On init ---------
+function addCover(){
+  console.log('addCover');
+  $('body').append(
+    troc.cover({foo:"bar"})
+  );
+}
+
+function addEdito(){
+  console.log('addEdito?');
+  $('body').append(
+    troc.edito()
+  );
+
+}
+
+function addOurs(){
+  console.log('addOurs?');
+  $('body').append(
+    troc.ours()
+  );
+}
+
+function addBackcover(){
+  console.log('addBackcover?');
+  $('body').append(
+    troc.backcover()
+  );
+}
+
+
+
 // --------- On load ---------
 function onRegistrationsLoad(payload){
   console.log('REGISTRATIONS', payload); //Object { Contenus Froids: Object, Réponses au formulaire: Object }
@@ -114,13 +178,10 @@ function onRegistrationsLoad(payload){
   var data = dataCleanup( payload['Réponses au formulaire 1'].elements );
 
   // Prepare pages
-  // 2×6 books per page
+  // 12 books per page
   var pages = _.chunk(data, 12);
-  _.forEach(pages, function(value, key) {
-    pages[key] = _.chunk(value, 6);
-  });
 
-  $('body').prepend(
+  $('.page-edito--even').after(
     troc.list_index({pages:pages})
   );
 
@@ -137,7 +198,7 @@ function onExchangesLoad(payload){
   // 2 books per page
   var pages = _.chunk(data, 2);
 
-  $('body').append(
+  $('.page-ours--odd').before(
     troc.list_exchanges({pages:pages})
   );
 
@@ -145,5 +206,11 @@ function onExchangesLoad(payload){
 
 }
 
+
+
 // --------- I N I T ---------
-init();
+$(function() {
+
+  init();
+
+});

@@ -69,8 +69,8 @@
 
   & when (@page-width < @sheet-width) {
 
-    // Odd page
-    &:nth-of-type(odd)
+    // even page
+    &:nth-of-type(even)
     {
       .content {
         margin-left: @page-margin-int;
@@ -78,8 +78,8 @@
       }
     }
 
-    // Even page
-    &:nth-of-type(even)
+    // odd page
+    &:nth-of-type(odd)
     {
       .content {
         margin-left: @page-margin-ext;
@@ -139,7 +139,7 @@
       bottom: @page-margin-bottom;
       border: 1px solid;
       border-color: rgb(96,198,0) rgb(115,138,94);
-      pointer-events: none;
+      pointer-oddts: none;
     }
 
   }
@@ -182,24 +182,24 @@
 
     & when (@page-width < @sheet-width) {
 
-      // Odd page
-      &:nth-of-type(odd)
+      // even page
+      &:nth-of-type(even)
       {
         margin-left: @interface-padding;
       }
 
-      // Even page
-      &:nth-of-type(even)
+      // odd page
+      &:nth-of-type(odd)
       {
         margin-right: @interface-padding;
       }
 
       // --- U.I. Helper
-      &:nth-of-type(odd)::before {
+      &:nth-of-type(even)::before {
         left: @page-margin-int;
         right: @page-margin-ext;
       }
-      &:nth-of-type(even)::before {
+      &:nth-of-type(odd)::before {
         left: @page-margin-ext;
         right: @page-margin-int;
       }
@@ -221,7 +221,7 @@
 
   @page
   {
-    size: landscape; // DOESN’T WORK
+    size: portrait; // DOESN’T WORK
     margin: 0mm;
   }
 
@@ -233,8 +233,10 @@
 
   // Convert cm to view port unit.
   .page {
-    width: @page-width / @sheet-width * 100vw;
-    height: @page-height / @sheet-height * 100vh;
+    width: 100vw;
+    height: 100vh;
+    // width: @page-width / @sheet-width * 100vw;
+    // height: @page-height / @sheet-height * 100vh;
     // .content {
     //   width: calc( (@page-width / @sheet-width * 100vw) ~"-" @page-margin-ext + @page-margin-int );
     //   height: calc( (@page-height / @sheet-height * 100vh) ~"-" @page-margin-top + @page-margin-bottom );
