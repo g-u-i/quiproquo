@@ -1,0 +1,24 @@
+<section class="page page-ticket">
+  <div class="content">
+
+    <div class="ticket">
+      <div class=legende>
+        <p class="cote"><strong>{{page.numero_livre}}</strong>.{{page.largeur}}.{{page.hauteur}}.{{page.nombre_de_pages}}.{{{colorCode page.mode_colorimetrique}}}.{{page.nombre_d_exemplaires}}</p>
+        <p class="nom">{{page.auteur}}</p>
+        <p class="titre">{{page.titre}}</p>
+        <p class="pagenb">{{page.nombre_de_pages}}p</p>
+
+        <p class="city">{{page.ville_d_impression}}</p>
+        <p class="date">{{page.annee}}</p>
+        <p class="size">{{page.largeur}}×{{page.hauteur}}mm</p>
+        <p class="technic">{{page.technique_d_impression}}, {{page.mode_colorimetrique}}</p>
+        <p class="reliure">{{page.reliure}}</p>
+      </div>
+
+       <div class=photoitem>
+         <img class="photo" data-src="{{page.numero_livre}}.jpg" src="print/assets/img/placeholder.gif" alt="" />
+       </div>
+    </div>
+
+  </div>
+</section>

@@ -111,3 +111,42 @@ this["troc"]["list_index"] = Handlebars.template({"1":function(container,depth0,
 this["troc"]["ours"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     return "<section class=\"page page-default page-ours page-ours--odd\">\n  <div class=\"content\">\n\n\n  </div>\n</section>\n\n<section class=\"page page-default page-ours page-ours--even\">\n  <div class=\"content\">\n\n    <h3>Ours</h3>\n\n    <p>\n      Avec la participation de l’EESAB - Rennes, l’ENSBA - Lyon, l’ERG - Bruxelles, l’ESAD - Valence, la HEAD - Genève, la HEAR - Strasbourg/Mulhouse, l’ISBA - Besançon, l’isdaT - Toulouse, LISAA - Strasbourg, le Lycée Gutenberg - Illkirch, le Pôle Supérieur de Design Le Corbusier - Illkirch, l’Université des arts visuels – Strasbourg, l’UQAM - Montréal.\n    </p>\n\n    <p>\n      Scénographie et catalogue réalisés lors d’un workshop d’Angeline Ostinelli et Julien Gargot avec les étudiants du DSAA inSituLab, Florent Alexandre, Koulma Bilger, Pétronille Camphuis, Sophie Chialva, Solène Dietz, Juliette Ganteille, Célia Galipaud, Thomas Huard, Suzanne Husson, Elín-Margot Höskuldsson, Pauline Molina, Morgane Marin, Mathilde Richard, Maeva Tobalagba et Mélodie Valverde.\n    </p>\n\n    <p>\n      Avec le soutien de Fedrigoni, la HEAR et le Pôle Supérieur de Design Le Corbusier\n    </p>\n\n    <p class=\"small\">\n      Côte : N° du live. Largeur. Hauteur. Nbre de pages. Couleur. Nbre d'exemplaires<br>\n      Couleur: C = Couleur / NB = Noir et blanc / + = Autres.\n    </p>\n\n  </div>\n</section>\n";
 },"useData":true});
+this["troc"]["ticket"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, alias1=container.lambda, alias2=container.escapeExpression;
+
+  return "<section class=\"page page-ticket\">\n  <div class=\"content\">\n\n    <div class=\"ticket\">\n      <div class=legende>\n        <p class=\"cote\"><strong>"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
+    + "</strong>."
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.largeur : stack1), depth0))
+    + "."
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.hauteur : stack1), depth0))
+    + "."
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.nombre_de_pages : stack1), depth0))
+    + "."
+    + ((stack1 = (helpers.colorCode || (depth0 && depth0.colorCode) || helpers.helperMissing).call(depth0 != null ? depth0 : {},((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.mode_colorimetrique : stack1),{"name":"colorCode","hash":{},"data":data})) != null ? stack1 : "")
+    + "."
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.nombre_d_exemplaires : stack1), depth0))
+    + "</p>\n        <p class=\"nom\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.auteur : stack1), depth0))
+    + "</p>\n        <p class=\"titre\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.titre : stack1), depth0))
+    + "</p>\n        <p class=\"pagenb\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.nombre_de_pages : stack1), depth0))
+    + "p</p>\n\n        <p class=\"city\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.ville_d_impression : stack1), depth0))
+    + "</p>\n        <p class=\"date\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.annee : stack1), depth0))
+    + "</p>\n        <p class=\"size\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.largeur : stack1), depth0))
+    + "×"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.hauteur : stack1), depth0))
+    + "mm</p>\n        <p class=\"technic\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.technique_d_impression : stack1), depth0))
+    + ", "
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.mode_colorimetrique : stack1), depth0))
+    + "</p>\n        <p class=\"reliure\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.reliure : stack1), depth0))
+    + "</p>\n      </div>\n\n       <div class=photoitem>\n         <img class=\"photo\" data-src=\""
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
+    + ".jpg\" src=\"print/assets/img/placeholder.gif\" alt=\"\" />\n       </div>\n    </div>\n\n  </div>\n</section>\n";
+},"useData":true});

@@ -7,7 +7,7 @@ var images_registration_folder = 'index/';
 var images_exchange_folder = 'exchanges/';
 
 // Functions / Handlebars
-function init() {
+function init_catalogue() {
 
   // Add statics pages
   addCover();
@@ -21,6 +21,16 @@ function init() {
                   simpleSheet: false })
   Tabletop.init({ key: exchanges,
                   callback: onExchangesLoad,
+                  simpleSheet: false })
+
+}
+
+function init_ticket() {
+
+  $('body').addClass('ticket');
+  // Add dynamics pages
+  Tabletop.init({ key: registrations,
+                  callback: onRegistrationsLoadForTicket,
                   simpleSheet: false })
 
 }
@@ -105,13 +115,14 @@ Handlebars.registerHelper('firstChar', function(a)
 Handlebars.registerHelper('colorCode', function(a)
 {
   var s = "";
-  if ( a.search('4 couleurs') ) {
+  console.log(a, a.search('4 couleurs'), a.search('niveaux de gris'));
+  if ( a.search('4 couleurs') === 0 ) {
     s += 'C';
   }
-  if ( a.search('niveaux de gris') ) {
+  if ( a.search('niveaux de gris') === 0 ) {
     s += 'NB';
   }
-  if ( a.search('Autre') ) {
+  if ( a.search('Autre') === 0 ) {
     s += '+';
   }
   return new Handlebars.SafeString(s)
@@ -189,6 +200,20 @@ function onRegistrationsLoad(payload){
 
 }
 
+function onRegistrationsLoadForTicket(payload){
+  console.log('REGISTRATIONS FOR TICKET', payload); //Object { Contenus Froids: Object, Réponses au formulaire: Object }
+
+  var data = dataCleanup( payload['Réponses au formulaire 1'].elements );
+  var index = parseInt( window.location.hash.replace( /[^\d.]/g, '') ) - 1;
+
+  $('body').html(
+    troc.ticket({page:data[index]})
+  );
+
+  $('.page-ticket img').updateImages(images_path + images_registration_folder);
+
+}
+
 function onExchangesLoad(payload){
   // console.log(payload); //Object { Échanges: Object }
 
@@ -211,6 +236,16 @@ function onExchangesLoad(payload){
 // --------- I N I T ---------
 $(function() {
 
-  init();
+  if(window.location.hash) {
+
+    init_ticket();
+
+    $(window).on('hashchange', function() {
+      init_ticket();
+    });
+
+  } else {
+    init_catalogue();
+  }
 
 });

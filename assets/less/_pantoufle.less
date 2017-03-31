@@ -13,8 +13,12 @@
 @page-inner-height: calc(100% ~"-" @page-margin-top + @page-margin-bottom);
 @page-inner-width-mm: @page-width - @page-margin-ext - @page-margin-int;
 @page-inner-height-mm: @page-height - @page-margin-top - @page-margin-bottom;
+@ticket-inner-width: calc(100% ~"-" @ticket-margin-ext + @ticket-margin-int);
+@ticket-inner-height: calc(100% ~"-" @ticket-margin-top + @ticket-margin-bottom);
+@ticket-inner-width-mm: @page-ticket-width - @ticket-margin-ext - @ticket-margin-int;
 
-.hide {
+.hide
+{
   position: absolute;
   width: 1px;
   height: 1px;
@@ -89,6 +93,16 @@
 
   }
 
+}
+
+.page.page-ticket
+{
+  width: @ticket-inner-width;
+  height: @page-ticket-height;
+  .content {
+    margin-top: @ticket-margin-top;
+    margin-bottom: @ticket-margin-bottom;
+  }
 }
 
 /* =Screen
@@ -208,6 +222,35 @@
 
   }
 
+  .page.page-ticket
+  {
+
+    &, &:first-of-type {
+
+      width: @page-ticket-width;
+      height: @page-ticket-height;
+      margin-left: @interface-padding!important;
+
+      .content {
+        width: @ticket-inner-width;
+        height: @ticket-inner-height;
+        margin-right: @ticket-margin-int;
+        margin-left: @ticket-margin-ext;
+      }
+
+      // --- U.I. Helper
+      &::before {
+        top: @ticket-margin-top!important;
+        bottom: @ticket-margin-bottom!important;
+        left: @ticket-margin-ext!important;
+        right: @ticket-margin-int!important;
+      }
+
+    }
+
+
+  }
+
 } // @media screen
 
 
@@ -235,12 +278,35 @@
   .page {
     width: 100vw;
     height: 100vh;
-    // width: @page-width / @sheet-width * 100vw;
-    // height: @page-height / @sheet-height * 100vh;
-    // .content {
-    //   width: calc( (@page-width / @sheet-width * 100vw) ~"-" @page-margin-ext + @page-margin-int );
-    //   height: calc( (@page-height / @sheet-height * 100vh) ~"-" @page-margin-top + @page-margin-bottom );
-    // }
+  }
+
+  body.ticket {
+
+    padding: 1pt 0pt;
+
+    .page.page-ticket {
+
+      &::before {
+        content: "--";
+        font-size: 6pt;
+        line-height: 1pt;
+        display: block;
+        text-align: left;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+    }
+
+    &::after {
+      display: block;
+      content: "--";
+      font-size: 6pt;
+      line-height: 1pt;
+      text-align: left;
+    }
+
   }
 
 } // @media print

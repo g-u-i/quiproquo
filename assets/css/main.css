@@ -1,4 +1,5 @@
 @import '../fonts/Fira/fira.css';
+@import '../fonts/clearsans/clearsans.css';
 /* =Pantoufle
  * v0.2.
  * ---------------------------------------------------------------------------*/
@@ -42,6 +43,14 @@
 .page.page-default:nth-of-type(odd) .content {
   margin-left: 20mm;
   margin-right: 20mm;
+}
+.page.page-ticket {
+  width: calc(100% - 9mm);
+  height: auto;
+}
+.page.page-ticket .content {
+  margin-top: 4.5mm;
+  margin-bottom: 4.5mm;
 }
 /* =Screen
 */
@@ -107,6 +116,26 @@
     left: 20mm;
     right: 20mm;
   }
+  .page.page-ticket,
+  .page.page-ticket:first-of-type {
+    width: 57mm;
+    height: auto;
+    margin-left: 1cm !important;
+  }
+  .page.page-ticket .content,
+  .page.page-ticket:first-of-type .content {
+    width: calc(100% - 9mm);
+    height: calc(100% - 9mm);
+    margin-right: 4.5mm;
+    margin-left: 4.5mm;
+  }
+  .page.page-ticket::before,
+  .page.page-ticket:first-of-type::before {
+    top: 4.5mm !important;
+    bottom: 4.5mm !important;
+    left: 4.5mm !important;
+    right: 4.5mm !important;
+  }
 }
 /* =Print
 */
@@ -129,12 +158,32 @@
     width: 100vw;
     height: 100vh;
   }
+  body.ticket {
+    padding: 1pt 0pt;
+  }
+  body.ticket .page.page-ticket::before {
+    content: "--";
+    font-size: 6pt;
+    line-height: 1pt;
+    display: block;
+    text-align: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  body.ticket::after {
+    display: block;
+    content: "--";
+    font-size: 6pt;
+    line-height: 1pt;
+    text-align: left;
+  }
 }
 /* =Theme
  * Quiproquo
  * ---------------------------------------------------------------------------*/
 body {
-  font-family: "Fira Mono", serif;
+  font-family: "Clear Sans", sans-serif;
 }
 .index {
   height: 257mm;
@@ -146,7 +195,6 @@ body {
   flex-wrap: wrap;
   -ms-flex-line-pack: start;
   align-content: flex-start;
-  font-family: 'Fira Mono', monospace;
   font-size: 10pt;
   color: #888;
 }
@@ -181,7 +229,7 @@ body {
 .index .legende {
   width: 52mm;
   margin-right: 7mm;
-  border-bottom: dashed 1pt #000;
+  border-bottom: dashed 1pt #1A1A1A;
   padding-bottom: 7mm;
   margin-bottom: 7mm;
 }
@@ -325,6 +373,28 @@ body {
   position: relative;
   top: 115mm;
   left: 65mm;
+}
+.page-ticket {
+  font-size: 10pt;
+}
+.page-ticket .ticket {
+  padding-bottom: 4.5mm;
+}
+.page-ticket p {
+  width: 48mm;
+  margin: 0;
+}
+.page-ticket p.titre {
+  margin: .5em 0;
+}
+.page-ticket .legende {
+  border-bottom: dashed 1pt #1A1A1A;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+.page-ticket .photo {
+  width: 48mm;
+  height: auto;
 }
 @media screen {
   body {
