@@ -238,13 +238,13 @@ body {
 }
 .page-cover h1 {
   font-weight: bold;
-  font-size: 151.557pt;
+  font-size: 140pt;
   position: absolute;
   -ms-transform-origin: 0 0;
   transform-origin: 0 0;
   -ms-transform: rotate(270deg);
   transform: rotate(270deg);
-  bottom: -0.93em;
+  bottom: -0.9em;
   line-height: 1;
   left: 0;
   margin: 0;
@@ -252,7 +252,7 @@ body {
 }
 .page-cover h2 {
   font-weight: bold;
-  font-size: 151.557pt;
+  font-size: 140pt;
   margin: 0;
   line-height: 1;
 }
@@ -269,53 +269,20 @@ body {
 }
 .page-cover .info {
   position: absolute;
-  left: 115mm;
-  top: 160mm;
+  bottom: 16mm;
+  right: 18mm;
 }
-.page-cover .img10 {
+.page-cover .gradient {
+  z-index: 0;
   position: absolute;
-  left: 100mm;
-  top: 180mm;
-}
-.page-cover .img2 {
-  position: absolute;
-  left: 140mm;
-  top: 100mm;
-}
-.page-cover .img3 {
-  position: absolute;
-  left: 50mm;
-  top: 70mm;
-}
-.page-cover .img4 {
-  position: absolute;
-  left: 120mm;
-  top: 60mm;
-}
-.page-cover .img5 {
-  position: absolute;
-  left: 50mm;
-  top: 135mm;
-}
-.page-cover .img6 {
-  position: absolute;
-  left: 85mm;
-  top: 20mm;
-}
-.page-cover .img7 {
-  position: absolute;
-  left: 45mm;
-  top: 60mm;
-}
-.page-cover .img8 {
-  position: absolute;
-  left: 35mm;
-  top: 190mm;
-}
-.page-cover .img9 {
-  position: absolute;
-  left: 115mm;
-  top: 160mm;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 32.5%;
+  background-image: url("https://framapic.org/vaMtNEJJ9yLA/213V4m9jkbin.jpg");
+  background-repeat: repeat-y;
+  background-size: 307.69230769% auto;
+  background-position: left 0;
 }
 .page-edito {
   background-size: 100% auto;
@@ -324,11 +291,11 @@ body {
 .page-edito h3,
 .page-edito p {
   font-weight: bold;
-  font-size: 18.5pt;
+  font-size: 17.5pt;
   margin-left: 50mm;
 }
 .page-edito h3 {
-  margin-top: 30mm;
+  margin-top: 0mm;
   margin-bottom: 5mm;
 }
 .page-edito p {
@@ -348,7 +315,7 @@ body {
 .page-ours h3,
 .page-ours p {
   font-weight: bold;
-  font-size: 18.5pt;
+  font-size: 17.5pt;
   color: #fff;
   margin-top: 0;
   margin-bottom: 7mm;
@@ -370,9 +337,32 @@ body {
 .page-backcover .logo {
   width: 45%;
   height: auto;
-  position: relative;
-  top: 115mm;
-  left: 65mm;
+  position: absolute;
+  bottom: 7mm;
+  left: 20mm;
+}
+.page-backcover h3,
+.page-backcover h4 {
+  font-weight: medium;
+  font-size: 17.5pt;
+  margin: 0 0 7mm 0;
+}
+.page-backcover .info {
+  position: absolute;
+  left: 20mm;
+  top: 20mm;
+}
+.page-backcover .gradient {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 32.5%;
+  background-image: url("https://framapic.org/99hakISC9rLm/l6Q87lGlW849.jpg");
+  background-repeat: repeat-y;
+  background-size: 307.69230769% auto;
+  background-position: right 0;
 }
 .page-ticket {
   font-size: 10pt;
