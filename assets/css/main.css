@@ -291,7 +291,7 @@ body {
 .page-edito h3,
 .page-edito p {
   font-weight: bold;
-  font-size: 17.5pt;
+  font-size: 17pt;
   margin-left: 50mm;
 }
 .page-edito h3 {
@@ -315,7 +315,7 @@ body {
 .page-ours h3,
 .page-ours p {
   font-weight: bold;
-  font-size: 17.5pt;
+  font-size: 17pt;
   color: #fff;
   margin-top: 0;
   margin-bottom: 7mm;
@@ -345,7 +345,7 @@ body {
 .page-backcover h3,
 .page-backcover h4 {
   font-weight: medium;
-  font-size: 17.5pt;
+  font-size: 17pt;
   margin: 0 0 7mm 0;
 }
 .page-backcover .info {
