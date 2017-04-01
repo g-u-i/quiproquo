@@ -3,10 +3,10 @@ this["troc"]["backcover"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main
     return "<section class=\"page page-default page-backcover\">\n  <div class=\"content\">\n\n    <div class=\"logo\">\n      <img src=\"http://la-bibliotheque.de/quiproquo/content/logo-quiproquo.svg\";>\n    </div>\n\n  </div>\n</section>\n";
 },"useData":true});
 this["troc"]["cover"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<section class=\"page page-default page-cover\">\n  <div class=\"content\">\n\n    <h1>Quiproquo</h1>\n\n    <div class=\"info\">\n      <h2>#2</h2>\n      <h3> Un troc<br>d’éditions </h3>\n      <h4>\n        31 mars 2017 <br>\n        Patio de la HEAR <br>\n        Strasbourg\n      </h4>\n    </div>\n\n    <div class=\"img2\">\n      <img src=\"http://la-bibliotheque.de/quiproquo/content/home/etapes-qpq01.svg\";>\n    </div>\n\n    <div class=\"img3\">\n      <img src=\"http://la-bibliotheque.de/quiproquo/content/home/etapes-qpq02.svg\";>\n    </div>\n\n    <div class=\"img4\">\n      <img src=\"http://la-bibliotheque.de/quiproquo/content/home/etapes-qpq03.svg\";>\n    </div>\n\n    <div class=\"img5\">\n      <img src=\"http://la-bibliotheque.de/quiproquo/content/home/etapes-qpq04.svg\";>\n    </div>\n\n    <div class=\"img6\">\n      <img src=\"http://la-bibliotheque.de/quiproquo/content/home/etapes-qpq05.svg\";>\n    </div>\n\n    <div class=\"img7\">\n      <img src=\"http://la-bibliotheque.de/quiproquo/content/home/etapes-qpq06.svg\";>\n    </div>\n\n    <div class=\"img8\">\n      <img src=\"http://la-bibliotheque.de/quiproquo/content/home/etapes-qpq07.svg\";>\n    </div>\n\n    <div class=\"img10\">\n      <img src=\"http://la-bibliotheque.de/quiproquo/content/fleche-droite.svg\";>\n    </div>\n\n  </div>\n</section>\n";
+    return "<section class=\"page page-default page-cover\">\n  <div class=\"content\">\n\n    <h1>Quiproquo</h1>\n\n    <div class=\"info\">\n      <h2>#2</h2>\n      <h3> Un troc<br>d’éditions </h3>\n      <h4>\n        31 mars 2017 <br>\n        Patio de la HEAR <br>\n        Strasbourg\n      </h4>\n    </div>\n\n    <div class=\"img2\">\n      <img src=\"../home/etapes-qpq01.svg\";>\n    </div>\n\n    <div class=\"img3\">\n      <img src=\"../home/etapes-qpq02.svg\";>\n    </div>\n\n    <div class=\"img4\">\n      <img src=\"../home/etapes-qpq03.svg\";>\n    </div>\n\n    <div class=\"img5\">\n      <img src=\"../home/etapes-qpq04.svg\";>\n    </div>\n\n    <div class=\"img6\">\n      <img src=\"../home/etapes-qpq05.svg\";>\n    </div>\n\n    <div class=\"img7\">\n      <img src=\"../home/etapes-qpq06.svg\";>\n    </div>\n\n    <div class=\"img8\">\n      <img src=\"../home/etapes-qpq07.svg\";>\n    </div>\n\n    <div class=\"img10\">\n      <img src=\"http://la-bibliotheque.de/quiproquo/content/fleche-droite.svg\";>\n    </div>\n\n  </div>\n</section>\n";
 },"useData":true});
 this["troc"]["edito"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<section class=\"page page-default page-edito page-edito--odd\">\n  <div class=\"content\">\n\n\n  </div>\n</section>\n\n<section class=\"page page-default page-edito page-edito--even\">\n  <div class=\"content\">\n\n    <h3>Édito</h3>\n\n    <p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.</p>\n\n  </div>\n</section>\n";
+    return "<section class=\"page page-default page-edito page-edito--odd\">\n  <div class=\"content\">\n\n\n  </div>\n</section>\n\n<section class=\"page page-default page-edito page-edito--even\">\n  <div class=\"content\">\n\n    <h3>Édito</h3>\n\n    <p>\n      <strong>Rien à vendre, tout à dépenser.</strong>\n    </p>\n    <p>\n      <strong>C’est un complet Quiproquo. Tu viens avec un livre, tu repars avec un autre.</strong>\n    </p>\n    <p>\n      Le deuxième troc d’éditions est organisé le vendredi 31 mars et samedi 1er avril 2017. Son nom ? Quiproquo. C’est une promesse d’échange : un qui pour un quo. Il a lieu à la Hear, dans le cadre de Exemplaires 2017. L’occasion de réunir les pratiques éditoriales en écoles, mêlant étudiants à enseignants à intervenants: l’EESAB – Rennes, l’ENSBA – Lyon, l’ERG – Bruxelles, l’ESAD – Valence, la HEAD – Genève, la HEAR – Mulhouse/Strasbourg, l’ISBA – Besançon, l’isdaT – Toulouse, LISAA – Strasbourg, Université des arts visuels – Strasbourg, le Lycée Gutenberg – Illkirch, le Pôle Supérieur de Design Le Corbusier – Illkirch, l’Université Paris 8, l’UQAM – Montréal…\n    </p>\n\n  </div>\n</section>\n\n<section class=\"page page-default page-edito page-edito--odd\">\n  <div class=\"content\">\n\n\n  </div>\n</section>\n\n<section class=\"page page-default page-edito page-edito--even\">\n  <div class=\"content\">\n\n    <p>\n      <strong>Tu penses à des équivalences. Tu soupèses la chose. Tu l’évalues. Tu aimes ou tu tentes le coup. Ça se change comme ça, en négociation, en faisant un pari.</strong>\n    </p>\n    <p>\n      <strong><em>Chantre</em> contre <em>Phobo Phobie</em>, <em>open modele</em> contre <em>Lubriquité exotique</em>, <em>Orestie</em> contre <em>Monstre dépression</em>, <em>Après-demain</em> contre <em>Black out</em>, <em>Blitzzz</em> contre <em>Chien</em>, la quadri contre la bichromie, le carré-collé contre le juste plié, le 26 contre le 17, le 55 contre le 2.</strong>\n    </p>\n    <p>\n      Cette fois encore, la scénographie a été conçue pour l’occasion, des échelles en combinaisons, toutes en légèreté, lors d’un workshop avec les étudiants de l’InsituLab. En résulte un mobilier transportable, incliné et mobile comme les livres. Les marque pages font le lien. Tout s’accorde et se relie au catalogue. Grâce au code développé en amont, le catalogue est mouvant jusqu’à la dernière minute, jusqu’à l’arrivée du dernier participant…\n      <strong>Le Quiproquo c’est ceci & cela. C’est spontané, éphémère, cumulatif & équilibré. C’est & et & et &… Un troc de trucs imprimés.</strong>\n    </p>\n\n  </div>\n</section>\n";
 },"useData":true});
 this["troc"]["list_exchanges"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : {};
@@ -114,9 +114,17 @@ this["troc"]["ours"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":fun
 this["troc"]["ticket"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=container.lambda, alias2=container.escapeExpression;
 
-  return "<section class=\"page page-ticket\">\n  <div class=\"content\">\n\n    <div class=\"ticket\">\n      <div class=legende>\n        <p class=\"cote\"><strong>"
+  return "<section class=\"page page-ticket\">\n  <div class=\"content\">\n\n    <!-- stock -->\n    <div class=\"ticket ticket--stock\">\n\n      <div class=\"id\">\n        <img src=\"../home/etapes-qpq03.svg\">\n        <span class=\"huge\">"
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
-    + "</strong>."
+    + "</span>\n      </div>\n\n      <div class=photoitem>\n        <img class=\"photo\" data-src=\""
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
+    + ".jpg\" src=\"print/assets/img/placeholder.gif\" alt=\"\" />\n      </div>\n\n    </div>\n\n    <!-- expo -->\n    <div class=\"ticket ticket--expo\">\n\n      <div class=\"id\">\n        <span class=\"huge\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
+    + "</span>\n        <img src=\"../home/etapes-qpq04.svg\">\n      </div>\n\n      <div class=photoitem>\n        <img class=\"photo\" data-src=\""
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
+    + ".jpg\" src=\"print/assets/img/placeholder.gif\" alt=\"\" />\n      </div>\n\n      <div class=legende>\n        <p class=\"cote\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
+    + "."
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.largeur : stack1), depth0))
     + "."
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.hauteur : stack1), depth0))
@@ -146,7 +154,29 @@ this["troc"]["ticket"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":f
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.mode_colorimetrique : stack1), depth0))
     + "</p>\n        <p class=\"reliure\">"
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.reliure : stack1), depth0))
-    + "</p>\n      </div>\n\n       <div class=photoitem>\n         <img class=\"photo\" data-src=\""
+    + "</p>\n      </div>\n\n    </div>\n\n    <!-- badge -->\n    <div class=\"ticket ticket--badge\">\n\n      <div class=\"id\">\n        <img src=\"../home/etapes-qpq01.svg\">\n        <span class=\"huge\">"
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
-    + ".jpg\" src=\"print/assets/img/placeholder.gif\" alt=\"\" />\n       </div>\n    </div>\n\n  </div>\n</section>\n";
+    + "</span>\n      </div>\n\n      <div class=photoitem>\n        <img class=\"photo\" data-src=\""
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
+    + ".jpg\" src=\"print/assets/img/placeholder.gif\" alt=\"\" />\n      </div>\n\n    </div>\n\n    <!-- monaie -->\n    <div class=\"ticket ticket--monaie\">\n\n      <div class=\"id\">\n        <img src=\"../home/etapes-qpq06.svg\">\n        <span class=\"huge\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
+    + "</span>\n      </div>\n\n      <div class=photoitem>\n        <img class=\"photo\" data-src=\""
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
+    + ".jpg\" src=\"print/assets/img/placeholder.gif\" alt=\"\" />\n      </div>\n\n    </div>\n    <div class=\"ticket ticket--monaie\">\n\n      <div class=\"id\">\n        <img src=\"../home/etapes-qpq06.svg\">\n        <span class=\"huge\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
+    + "</span>\n      </div>\n\n      <div class=photoitem>\n        <img class=\"photo\" data-src=\""
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
+    + ".jpg\" src=\"print/assets/img/placeholder.gif\" alt=\"\" />\n      </div>\n\n    </div>\n    <div class=\"ticket ticket--monaie\">\n\n      <div class=\"id\">\n        <img src=\"../home/etapes-qpq06.svg\">\n        <span class=\"huge\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
+    + "</span>\n      </div>\n\n      <div class=photoitem>\n        <img class=\"photo\" data-src=\""
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
+    + ".jpg\" src=\"print/assets/img/placeholder.gif\" alt=\"\" />\n      </div>\n\n    </div>\n    <div class=\"ticket ticket--monaie\">\n\n      <div class=\"id\">\n        <img src=\"../home/etapes-qpq06.svg\">\n        <span class=\"huge\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
+    + "</span>\n      </div>\n\n      <div class=photoitem>\n        <img class=\"photo\" data-src=\""
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
+    + ".jpg\" src=\"print/assets/img/placeholder.gif\" alt=\"\" />\n      </div>\n\n    </div>\n    <div class=\"ticket ticket--monaie\">\n\n      <div class=\"id\">\n        <img src=\"../home/etapes-qpq06.svg\">\n        <span class=\"huge\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
+    + "</span>\n      </div>\n\n      <div class=photoitem>\n        <img class=\"photo\" data-src=\""
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
+    + ".jpg\" src=\"print/assets/img/placeholder.gif\" alt=\"\" />\n      </div>\n\n    </div>\n\n  </div>\n</section>\n";
 },"useData":true});

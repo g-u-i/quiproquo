@@ -324,12 +324,12 @@ body {
 .page-edito h3,
 .page-edito p {
   font-weight: bold;
-  font-size: 37.452pt;
+  font-size: 18.5pt;
   margin-left: 50mm;
 }
 .page-edito h3 {
   margin-top: 30mm;
-  margin-bottom: 0;
+  margin-bottom: 5mm;
 }
 .page-edito p {
   margin-top: 0;
@@ -348,7 +348,7 @@ body {
 .page-ours h3,
 .page-ours p {
   font-weight: bold;
-  font-size: 16.5pt;
+  font-size: 18.5pt;
   color: #fff;
   margin-top: 0;
   margin-bottom: 7mm;
@@ -378,23 +378,44 @@ body {
   font-size: 10pt;
 }
 .page-ticket .ticket {
-  padding-bottom: 4.5mm;
+  border-top: 1pt dashed #1A1A1A;
+  padding-top: 10mm;
+  margin: 10mm 5mm;
+  width: 38mm;
 }
-.page-ticket p {
-  width: 48mm;
+.page-ticket .legende p {
+  width: 38mm;
   margin: 0;
 }
-.page-ticket p.titre {
+.page-ticket .legende p.titre {
   margin: .5em 0;
 }
-.page-ticket .legende {
-  border-bottom: dashed 1pt #1A1A1A;
-  padding-bottom: 1em;
-  margin-bottom: 1em;
-}
 .page-ticket .photo {
-  width: 48mm;
+  width: 38mm;
   height: auto;
+}
+.page-ticket .id {
+  text-align: right;
+  margin-bottom: 10mm;
+  width: 38mm;
+  white-space: nowrap;
+}
+.page-ticket .id img {
+  width: 20mm;
+  height: auto;
+}
+.page-ticket .id .huge {
+  font-size: 50pt;
+  font-weight: bold;
+}
+.page-ticket .ticket--expo .id {
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  text-align: left;
+  margin-bottom: 30mm;
+}
+.page-ticket .ticket--expo .photo {
+  margin-bottom: 10mm;
 }
 @media screen {
   body {

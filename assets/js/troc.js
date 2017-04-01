@@ -115,7 +115,7 @@ Handlebars.registerHelper('firstChar', function(a)
 Handlebars.registerHelper('colorCode', function(a)
 {
   var s = "";
-  console.log(a, a.search('4 couleurs'), a.search('niveaux de gris'));
+
   if ( a.search('4 couleurs') === 0 ) {
     s += 'C';
   }
@@ -126,6 +126,13 @@ Handlebars.registerHelper('colorCode', function(a)
     s += '+';
   }
   return new Handlebars.SafeString(s)
+});
+
+Handlebars.registerHelper('loop', function(n, block) {
+    var accum = '';
+    for(var i = 0; i < n; ++i)
+        accum += block.fn(i);
+    return accum;
 });
 
 function dataCleanup(payload)
@@ -192,7 +199,7 @@ function onRegistrationsLoad(payload){
   // 12 books per page
   var pages = _.chunk(data, 12);
 
-  $('.page-edito--even').after(
+  $('.page-edito--even').last().after(
     troc.list_index({pages:pages})
   );
 
@@ -204,13 +211,21 @@ function onRegistrationsLoadForTicket(payload){
   console.log('REGISTRATIONS FOR TICKET', payload); //Object { Contenus Froids: Object, Réponses au formulaire: Object }
 
   var data = dataCleanup( payload['Réponses au formulaire 1'].elements );
-  var index = parseInt( window.location.hash.replace( /[^\d.]/g, '') ) - 1;
+  var wantedBook = parseInt( window.location.hash.replace( /[^\d.]/g, '') );
+  var page = null;
+
+  $(data).each(function(i) {
+    if ( this.numero_livre == wantedBook) {
+      page = this;
+      return false;
+    }
+  });
 
   $('body').html(
-    troc.ticket({page:data[index]})
+    troc.ticket({page:page})
   );
 
-  $('.page-ticket img').updateImages(images_path + images_registration_folder);
+  $('.page-ticket img.photo').updateImages(images_path + images_registration_folder);
 
 }
 
