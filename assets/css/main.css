@@ -327,6 +327,7 @@ body {
 }
 .page-ours p.small {
   font-size: 10pt;
+  margin-bottom: .5em;
 }
 .page-ours--odd {
   background-image: url("https://framapic.org/99hakISC9rLm/l6Q87lGlW849.jpg");
