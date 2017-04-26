@@ -1,25 +1,26 @@
 // === Structure
 .index {
 
-  height: 257mm;
+  height: 25@quiproquo2-spacer;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-content: flex-start;
 
-  font-size: 10pt;
+  font-size: @font-size-base;
   color: #888;
-
+  height: 100%;
+  
   p {
     margin: 0;
   }
 
   .photoitem{
 
-    margin: 0 7mm 13mm 0;
+    margin: 0 @quiproquo2-spacer 13mm 0;
 
     p{
-      margin-top: 1em;
+      margin-top: 0;
       width: 52mm;
       white-space: nowrap;
       overflow: hidden;
@@ -49,10 +50,10 @@
 
   .legende{
     width: 52mm;
-    margin-right: 7mm;
+    margin-right: @quiproquo2-spacer;
     border-bottom: dashed 1pt #1A1A1A;
-    padding-bottom: 7mm;
-    margin-bottom: 7mm;
+    padding-bottom: @quiproquo2-spacer;
+    margin-bottom: @quiproquo2-spacer;
   }
 
   .pagenb{
