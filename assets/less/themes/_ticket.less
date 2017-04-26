@@ -4,55 +4,12 @@
   font-size: @font-size-base;
 
   .ticket {
-    border-top: 1pt dashed #1A1A1A;
-    padding-top: @spacer-ticket;
-    margin: @spacer-ticket 5mm;
-    width: 38mm;
+    border-bottom: 1pt dashed #1A1A1A;
+    padding-bottom: @spacer-ticket;
   }
 
-
-  .legende{
-    p {
-      width: 38mm;
-      margin: 0;
-      &.titre {
-        margin: .5em 0;
-      }
-    }
-  }
-
-  .photo{
-    width: 38mm;
-    height: auto;
-  }
-
-  .id {
-    text-align: right;
-    margin-bottom: @spacer-ticket;
-    width: 38mm;
-    white-space: nowrap;
-    img {
-      width: 20mm;
-      height: auto;
-    }
-    .huge {
-      font-size: 50pt;
-      font-weight: bold;
-    }
-  }
-
-  .ticket--expo {
-
-    .id {
-      transform: rotate(180deg);
-      text-align: left;
-      margin-bottom: @spacer-ticket * 3;
-    }
-
-    .photo {
-      margin-bottom: @spacer-ticket;
-    }
-
+  figure {
+    margin: 0;
   }
 
 }

@@ -45,12 +45,18 @@
   margin-right: 20mm;
 }
 .page.page-ticket {
-  width: calc(100% - 9mm);
+  position: relative;
+  width: 57mm;
   height: auto;
+  overflow: hidden;
 }
 .page.page-ticket .content {
-  margin-top: 4.5mm;
-  margin-bottom: 4.5mm;
+  position: static !important;
+  overflow: hidden;
+  width: calc(100% - 14mm);
+  height: calc(100% - 14mm);
+  margin-top: 7mm;
+  margin-bottom: 7mm;
 }
 /* =Screen
 */
@@ -90,7 +96,7 @@
     bottom: 20mm;
     border: 1px solid;
     border-color: #60c600 #738a5e;
-    pointer-oddts: none;
+    pointer-events: none;
   }
   .page:first-of-type {
     margin-right: 1cm !important;
@@ -118,23 +124,19 @@
   }
   .page.page-ticket,
   .page.page-ticket:first-of-type {
-    width: 57mm;
-    height: auto;
     margin-left: 1cm !important;
   }
   .page.page-ticket .content,
   .page.page-ticket:first-of-type .content {
-    width: calc(100% - 9mm);
-    height: calc(100% - 9mm);
-    margin-right: 4.5mm;
-    margin-left: 4.5mm;
+    margin-right: 7mm;
+    margin-left: 7mm;
   }
   .page.page-ticket::before,
   .page.page-ticket:first-of-type::before {
-    top: 4.5mm !important;
-    bottom: 4.5mm !important;
-    left: 4.5mm !important;
-    right: 4.5mm !important;
+    top: 7mm !important;
+    bottom: 7mm !important;
+    left: 7mm !important;
+    right: 7mm !important;
   }
 }
 /* =Print
@@ -161,7 +163,11 @@
   body.ticket {
     padding: 1pt 0pt;
   }
-  body.ticket .page.page-ticket::before {
+  body.ticket .page {
+    width: 57mm;
+    height: auto;
+  }
+  body.ticket .page::before {
     content: "--";
     font-size: 6pt;
     line-height: 1pt;
@@ -171,11 +177,11 @@
     top: 0;
     left: 0;
   }
-  body.ticket::after {
-    display: block;
+  body.ticket .page::after {
     content: "--";
     font-size: 6pt;
     line-height: 1pt;
+    display: block;
     text-align: left;
   }
 }
@@ -370,44 +376,11 @@ body {
   font-size: 9pt;
 }
 .page-ticket .ticket {
-  border-top: 1pt dashed #1A1A1A;
-  padding-top: 10mm;
-  margin: 10mm 5mm;
-  width: 38mm;
+  border-bottom: 1pt dashed #1A1A1A;
+  padding-bottom: 10mm;
 }
-.page-ticket .legende p {
-  width: 38mm;
+.page-ticket figure {
   margin: 0;
-}
-.page-ticket .legende p.titre {
-  margin: .5em 0;
-}
-.page-ticket .photo {
-  width: 38mm;
-  height: auto;
-}
-.page-ticket .id {
-  text-align: right;
-  margin-bottom: 10mm;
-  width: 38mm;
-  white-space: nowrap;
-}
-.page-ticket .id img {
-  width: 20mm;
-  height: auto;
-}
-.page-ticket .id .huge {
-  font-size: 50pt;
-  font-weight: bold;
-}
-.page-ticket .ticket--expo .id {
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-  text-align: left;
-  margin-bottom: 30mm;
-}
-.page-ticket .ticket--expo .photo {
-  margin-bottom: 10mm;
 }
 @media screen {
   body {

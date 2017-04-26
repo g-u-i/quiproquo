@@ -27,11 +27,21 @@ function init_catalogue() {
 
 function init_ticket() {
 
-  $('body').addClass('ticket');
-  // Add dynamics pages
-  Tabletop.init({ key: registrations,
-                  callback: onRegistrationsLoadForTicket,
-                  simpleSheet: false })
+  var hash = window.location.hash.replace(/^#/, '');
+
+  if( Number.isInteger( parseInt( hash ) ) ) {
+
+    $('body').addClass('ticket');
+    // Add dynamics pages
+    Tabletop.init({ key: registrations,
+      callback: onRegistrationsLoadForTicket,
+      simpleSheet: false })
+
+  } else {
+
+    createStaticTickets();
+
+  }
 
 }
 
@@ -128,10 +138,11 @@ Handlebars.registerHelper('colorCode', function(a)
   return new Handlebars.SafeString(s)
 });
 
-Handlebars.registerHelper('loop', function(n, block) {
+Handlebars.registerHelper('loop', function(n, block)
+{
     var accum = '';
     for(var i = 0; i < n; ++i)
-        accum += block.fn(i);
+      accum += block.fn(i);
     return accum;
 });
 
@@ -183,6 +194,13 @@ function addBackcover(){
   console.log('addBackcover?');
   $('body').append(
     troc.backcover()
+  );
+}
+
+function createStaticTickets(){
+  console.log('createStaticTickets?');
+  $('body').addClass('ticket').html(
+    troc.all_static_tickets()
   );
 }
 
@@ -260,7 +278,9 @@ $(function() {
     });
 
   } else {
+
     init_catalogue();
+
   }
 
 });
