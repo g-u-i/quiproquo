@@ -68,14 +68,14 @@ gulp.task('templates', function(){
 gulp.task('serve', function() {
   browserSync.init({ server: "." });
 
-  gulp.watch({ glob: [ './assets/less/**/*.{less,css}' ] }, ['less']);
+  gulp.watch('./assets/less/**/*.{less,css}', ['less']);
   gulp.watch('./templates/*.hbs', ['templates']);
   gulp.watch("./templates/*.hbs").on('change', browserSync.reload);
   gulp.watch("./*.html").on('change', browserSync.reload);
 });
 
 gulp.task('watch', function() {
-  gulp.watch('./assets/less/*.less', ['less']);
+  gulp.watch('./assets/less/**/*.{less,css}', ['less']);
   gulp.watch('./templates/*.hbs', ['templates']);
 });
 
