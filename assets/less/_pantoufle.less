@@ -109,6 +109,8 @@
     height: @ticket-inner-height;
     margin-top: @ticket-margin-top;
     margin-bottom: @ticket-margin-bottom;
+    margin-right: @ticket-margin-int;
+    margin-left: @ticket-margin-ext;
   }
 
 }
@@ -237,11 +239,6 @@
 
       margin-left: @interface-padding!important;
 
-      .content {
-        margin-right: @ticket-margin-int;
-        margin-left: @ticket-margin-ext;
-      }
-
       // --- U.I. Helper
       &::before {
         top: @ticket-margin-top!important;
@@ -283,7 +280,7 @@
     height: 100vh;
   }
 
-  // Solves some printing issues with thermal printer
+  // Solves some printing issues with our thermal printer
   body.ticket {
 
     padding: 1pt 0pt;
@@ -292,6 +289,12 @@
 
       width: @page--ticket-width;
       height: @page--ticket-height;
+
+      .content {
+        // 4.5mm is the mandatory margin of our thermal printer
+        margin-right: @ticket-margin-int - 4.5mm;
+        margin-left: @ticket-margin-ext - 4.5mm;
+      }
 
       &::before {
         content: "--";
