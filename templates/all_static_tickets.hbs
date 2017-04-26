@@ -1,0 +1,34 @@
+<section class="page page-ticket">
+  <div class="content">
+
+    {{#loop 1}}
+    <!-- badge -->
+    <div class="ticket ticket--badge">
+
+      <figure>
+        <img src="print/assets/img/logo-quiproquo.svg">
+        <figcaption>
+          #3 Paris
+        </figcaption>
+      </figure>
+
+      <p>
+        Rendez-vous <br>
+        le dimanche 30 avril 2017 <br>
+        de 16 à 18 heures <br>
+        et sur www.la-bibliotheque.de/quiproquo
+      </p>
+
+      <p class="number">{{this}}</p>
+
+    </div>
+
+    <!-- stock -->
+    <div class="ticket ticket--stock">
+
+      <p class="number">{{this}}</p>
+
+    </div>
+    {{/loop}}
+
+</section>
