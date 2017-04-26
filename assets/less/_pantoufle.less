@@ -15,7 +15,7 @@
 @page-inner-height-mm: @page-height - @page-margin-top - @page-margin-bottom;
 @ticket-inner-width: calc(100% ~"-" @ticket-margin-ext + @ticket-margin-int);
 @ticket-inner-height: calc(100% ~"-" @ticket-margin-top + @ticket-margin-bottom);
-@ticket-inner-width-mm: @page-ticket-width - @ticket-margin-ext - @ticket-margin-int;
+@ticket-inner-width-mm: @page--ticket-width - @ticket-margin-ext - @ticket-margin-int;
 
 .hide
 {
@@ -97,12 +97,20 @@
 
 .page.page-ticket
 {
-  width: @ticket-inner-width;
-  height: @page-ticket-height;
+  position: relative;
+  width: @page--ticket-width;
+  height: @page--ticket-height;
+  overflow: hidden;
+
   .content {
+    position: static !important;
+    overflow: hidden;
+    width: @ticket-inner-width;
+    height: @ticket-inner-height;
     margin-top: @ticket-margin-top;
     margin-bottom: @ticket-margin-bottom;
   }
+
 }
 
 /* =Screen
@@ -153,7 +161,7 @@
       bottom: @page-margin-bottom;
       border: 1px solid;
       border-color: rgb(96,198,0) rgb(115,138,94);
-      pointer-oddts: none;
+      pointer-events: none;
     }
 
   }
@@ -227,13 +235,9 @@
 
     &, &:first-of-type {
 
-      width: @page-ticket-width;
-      height: @page-ticket-height;
       margin-left: @interface-padding!important;
 
       .content {
-        width: @ticket-inner-width;
-        height: @ticket-inner-height;
         margin-right: @ticket-margin-int;
         margin-left: @ticket-margin-ext;
       }
@@ -247,7 +251,6 @@
       }
 
     }
-
 
   }
 
@@ -280,11 +283,15 @@
     height: 100vh;
   }
 
+  // Solves some printing issues with thermal printer
   body.ticket {
 
     padding: 1pt 0pt;
 
-    .page.page-ticket {
+    .page {
+
+      width: @page--ticket-width;
+      height: @page--ticket-height;
 
       &::before {
         content: "--";
@@ -296,15 +303,14 @@
         top: 0;
         left: 0;
       }
+      &::after {
+        content: "--";
+        font-size: 6pt;
+        line-height: 1pt;
+        display: block;
+        text-align: left;
+      }
 
-    }
-
-    &::after {
-      display: block;
-      content: "--";
-      font-size: 6pt;
-      line-height: 1pt;
-      text-align: left;
     }
 
   }
