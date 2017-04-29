@@ -57,6 +57,8 @@
   height: calc(100% - 14mm);
   margin-top: 7mm;
   margin-bottom: 7mm;
+  margin-right: 7mm;
+  margin-left: 7mm;
 }
 /* =Screen
 */
@@ -126,11 +128,6 @@
   .page.page-ticket:first-of-type {
     margin-left: 1cm !important;
   }
-  .page.page-ticket .content,
-  .page.page-ticket:first-of-type .content {
-    margin-right: 7mm;
-    margin-left: 7mm;
-  }
   .page.page-ticket::before,
   .page.page-ticket:first-of-type::before {
     top: 7mm !important;
@@ -166,6 +163,11 @@
   body.ticket .page {
     width: 57mm;
     height: auto;
+  }
+  body.ticket .page .content {
+    width: 43mm;
+    margin-right: 2.5mm;
+    margin-left: 2.5mm;
   }
   body.ticket .page::before {
     content: "--";
@@ -286,7 +288,7 @@ body {
   left: 0;
   height: 100%;
   width: 32.5%;
-  background-image: url("https://framapic.org/vaMtNEJJ9yLA/213V4m9jkbin.jpg");
+  background-image: url("../img/trame1-hd.jpg");
   background-repeat: repeat-y;
   background-size: 307.69230769% auto;
   background-position: left 0;
@@ -310,10 +312,10 @@ body {
   margin-bottom: 5mm;
 }
 .page-edito--odd {
-  background-image: url("https://framapic.org/1jfoxh1A8wQZ/l1Q9yiGPTsbA.jpg");
+  background-image: url("../img/trame3-hd.jpg");
 }
 .page-edito--even {
-  background-image: url("https://framapic.org/74fR8uItcE6Y/OoIFKsSPdAQL.jpg");
+  background-image: url("../img/trame4-hd.jpg");
 }
 .page-ours {
   background-size: 100% auto;
@@ -367,20 +369,126 @@ body {
   right: 0;
   height: 100%;
   width: 32.5%;
-  background-image: url("https://framapic.org/99hakISC9rLm/l6Q87lGlW849.jpg");
+  background-image: url("../img/trame2-hd.jpg");
   background-repeat: repeat-y;
   background-size: 307.69230769% auto;
   background-position: right 0;
 }
 .page-ticket {
-  font-size: 9pt;
+  font-size: 6.75pt;
 }
 .page-ticket .ticket {
   border-bottom: 1pt dashed #1A1A1A;
-  padding-bottom: 10mm;
+  padding-bottom: 7mm;
+}
+.page-ticket .ticket + .ticket {
+  margin-top: 7mm;
 }
 .page-ticket figure {
   margin: 0;
+}
+.page-ticket img {
+  display: block;
+  max-width: 100%;
+}
+.page-ticket .ticket--badge {
+  font-weight: 700;
+  padding-bottom: 0;
+}
+.page-ticket .ticket--badge figure {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.page-ticket .ticket--badge figure img {
+  margin-right: -2mm;
+}
+.page-ticket .ticket--badge figure figcaption {
+  margin-left: 7mm;
+  white-space: nowrap;
+}
+.page-ticket .ticket--badge p.address {
+  margin-top: 7mm;
+  margin-bottom: 2mm;
+}
+.page-ticket .ticket--badge p.number {
+  text-align: right;
+  font-size: 27pt;
+  margin: 0;
+}
+.page-ticket .ticket--stock {
+  font-weight: 700;
+  height: 130mm;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+.page-ticket .ticket--stock p.number {
+  text-align: right;
+  font-size: 27pt;
+  margin: 0;
+}
+.page-ticket .ticket--expo {
+  margin-top: 14mm;
+}
+.page-ticket .ticket--expo p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.page-ticket .ticket--expo p.authors,
+.page-ticket .ticket--expo p.title {
+  font-weight: 700;
+}
+.page-ticket .ticket--expo p.authors {
+  margin-top: 3.5mm;
+  text-transform: capitalize;
+}
+.page-ticket .ticket--expo p.title {
+  margin-bottom: 3.5mm;
+}
+.page-ticket .ticket--expo p.id {
+  margin-top: 7mm;
+  font-size: 27pt;
+  font-weight: 700;
+  text-align: right;
+  position: absolute;
+  bottom: 14mm;
+  width: 43mm;
+}
+.page-ticket .ticket--expo + .ticket--badge {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  margin-top: 0;
+  margin-bottom: 14mm;
+  border-bottom: none;
+  padding-bottom: 0;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+.page-ticket .ticket--message {
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  font-weight: 700;
+  font-size: 112pt;
+  height: 66cm;
+}
+.reverse {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column-reverse;
+  flex-flow: column-reverse;
+}
+.reverse > * {
+  height: 130mm;
 }
 @media screen {
   body {

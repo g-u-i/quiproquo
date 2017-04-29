@@ -1,15 +1,141 @@
 .page-ticket {
 
-  @spacer-ticket: 10mm;
-  font-size: @font-size-base;
+  @spacer-ticket: 7mm;
+  @font-size-ticket-md: @font-size-base * .75;
+  @font-size-ticket-lg: @font-size-base * 3;
+
+  font-size: @font-size-ticket-md;
 
   .ticket {
     border-bottom: 1pt dashed #1A1A1A;
     padding-bottom: @spacer-ticket;
   }
+  .ticket + .ticket {
+    margin-top: @spacer-ticket;
+  }
 
   figure {
     margin: 0;
   }
+  img {
+    display: block;
+    max-width: 100%;
+  }
 
+  // Guest Badge
+  .ticket--badge {
+
+    font-weight: 700;
+    padding-bottom: 0;
+
+    figure {
+      display: flex;
+      flex-direction: row;
+
+      img {
+        margin-right: -2mm;
+      }
+
+      figcaption {
+        margin-left: @ticket-margin-ext;
+        white-space: nowrap;
+      }
+    }
+
+    p.text {
+      // width: 26mm;
+    }
+
+    p.address {
+      margin-top: @spacer-ticket;
+      margin-bottom: 2mm;
+    }
+
+    p.number {
+      text-align: right;
+      font-size: @font-size-base * 3;
+      margin: 0;
+    }
+
+  }
+
+  // Guest Stock
+  .ticket--stock {
+
+    font-weight: 700;
+    height: 130mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    p.number {
+
+      text-align: right;
+      font-size: @font-size-ticket-lg;
+      margin: 0;
+    }
+
+  }
+
+  .ticket--expo {
+
+    margin-top: @spacer-ticket * 2;
+
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    p.authors,
+    p.title {
+      font-weight: 700;
+    }
+    p.authors {
+      margin-top: @spacer-ticket * 0.5;
+      text-transform: capitalize;
+    }
+    p.title {
+      margin-bottom: @spacer-ticket * 0.5;
+    }
+    p.id {
+      margin-top: @spacer-ticket;
+      font-size: @font-size-ticket-lg;
+      font-weight: 700;
+      text-align: right;
+      position: absolute;
+      bottom: @spacer-ticket * 2;
+      width: @ticket-inner-width-mm;
+    }
+
+  }
+
+  .ticket--expo + .ticket--badge {
+    display: flex;
+    flex-flow: column;
+    transform: rotate(180deg);
+    margin-top: 0;
+    margin-bottom: @spacer-ticket * 2;
+    border-bottom: none;
+    padding-bottom: 0;
+    justify-content: flex-end;
+  }
+
+  // Message
+  .ticket--message {
+
+    writing-mode: vertical-rl;
+    font-weight: 700;
+    font-size: 112pt;
+    height: 66cm;
+
+  }
+
+}
+
+.reverse {
+  display: flex;
+  flex-flow: column-reverse;
+  > * {
+    height: 130mm;
+  }
 }

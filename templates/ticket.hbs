@@ -1,119 +1,50 @@
 <section class="page page-ticket">
   <div class="content">
 
-    <!-- stock -->
-    <div class="ticket ticket--stock">
+    <div class="reverse">
 
-      <div class="id">
-        <img src="../home/etapes-qpq03.svg">
-        <span class="huge">{{page.numero_livre}}</span>
-      </div>
+      <!-- expo -->
+      <div class="ticket ticket--expo">
 
-      <div class=photoitem>
-        <img class="photo" data-src="{{page.numero_livre}}.jpg" src="print/assets/img/placeholder.gif" alt="" />
-      </div>
+        <figure class="thumb">
+          <img class="cover" data-src="{{page.numero_livre}}.jpg" src="print/assets/img/placeholder.gif" alt="" />
+        </figure>
 
-    </div>
+        <p class="authors">{{page.auteur}}</p>
+        <p class="title"><em>{{page.titre}}</em></p>
 
-    <!-- expo -->
-    <div class="ticket ticket--expo">
-
-      <div class="id">
-        <span class="huge">{{page.numero_livre}}</span>
-        <img src="../home/etapes-qpq04.svg">
-      </div>
-
-      <div class=photoitem>
-        <img class="photo" data-src="{{page.numero_livre}}.jpg" src="print/assets/img/placeholder.gif" alt="" />
-      </div>
-
-      <div class=legende>
-        <p class="cote">{{page.numero_livre}}.{{page.largeur}}.{{page.hauteur}}.{{page.nombre_de_pages}}.{{{colorCode page.mode_colorimetrique}}}.{{page.nombre_d_exemplaires}}</p>
-        <p class="nom">{{page.auteur}}</p>
-        <p class="titre">{{page.titre}}</p>
-        <p class="pagenb">{{page.nombre_de_pages}}p</p>
-
-        <p class="city">{{page.ville_d_impression}}</p>
-        <p class="date">{{page.annee}}</p>
-        <p class="size">{{page.largeur}}×{{page.hauteur}}mm</p>
-        <p class="technic">{{page.technique_d_impression}}, {{page.mode_colorimetrique}}</p>
+        <p class="city">{{page.ville_d_impression}}, {{page.annee}}</p>
+        <p class="pagenb">{{page.nombre_de_pages}} pages</p>
+        <p class="size">{{page.largeur}} × {{page.hauteur}} mm</p>
+        <p class="nb">{{page.nombre_d_exemplaires}} exemplaires</p>
+        <p class="technic">{{page.technique_d_impression}}</p>
+        <p class="colormode">{{page.mode_colorimetrique}}</p>
         <p class="reliure">{{page.reliure}}</p>
+
+        <p class="id">{{page.numero_livre}}</p>
+
       </div>
+      .
+      <!-- badge -->
+      <div class="ticket ticket--badge">
 
-    </div>
+        <figure>
+          <img src="print/assets/img/logo-quiproquo.svg">
+          <figcaption>
+            #3 Paris
+          </figcaption>
+        </figure>
 
-    <!-- badge -->
-    <div class="ticket ticket--badge">
+        <p class="text">
+          Rendez-vous <br>
+          le dimanche 30.04.17 <br>
+          de 16 à 18 heures <br>
+        </p>
 
-      <div class="id">
-        <img src="../home/etapes-qpq01.svg">
-        <span class="huge">{{page.numero_livre}}</span>
-      </div>
+        <p class="address">
+          www.la-bibliotheque.de/quiproquo
+        </p>
 
-      <div class=photoitem>
-        <img class="photo" data-src="{{page.numero_livre}}.jpg" src="print/assets/img/placeholder.gif" alt="" />
-      </div>
-
-    </div>
-
-    <!-- monaie -->
-    <div class="ticket ticket--monaie">
-
-      <div class="id">
-        <img src="../home/etapes-qpq06.svg">
-        <span class="huge">{{page.numero_livre}}</span>
-      </div>
-
-      <div class=photoitem>
-        <img class="photo" data-src="{{page.numero_livre}}.jpg" src="print/assets/img/placeholder.gif" alt="" />
-      </div>
-
-    </div>
-    <div class="ticket ticket--monaie">
-
-      <div class="id">
-        <img src="../home/etapes-qpq06.svg">
-        <span class="huge">{{page.numero_livre}}</span>
-      </div>
-
-      <div class=photoitem>
-        <img class="photo" data-src="{{page.numero_livre}}.jpg" src="print/assets/img/placeholder.gif" alt="" />
-      </div>
-
-    </div>
-    <div class="ticket ticket--monaie">
-
-      <div class="id">
-        <img src="../home/etapes-qpq06.svg">
-        <span class="huge">{{page.numero_livre}}</span>
-      </div>
-
-      <div class=photoitem>
-        <img class="photo" data-src="{{page.numero_livre}}.jpg" src="print/assets/img/placeholder.gif" alt="" />
-      </div>
-
-    </div>
-    <div class="ticket ticket--monaie">
-
-      <div class="id">
-        <img src="../home/etapes-qpq06.svg">
-        <span class="huge">{{page.numero_livre}}</span>
-      </div>
-
-      <div class=photoitem>
-        <img class="photo" data-src="{{page.numero_livre}}.jpg" src="print/assets/img/placeholder.gif" alt="" />
-      </div>
-
-    </div>
-    <div class="ticket ticket--monaie">
-
-      <div class="id">
-        <img src="../home/etapes-qpq06.svg">
-        <span class="huge">{{page.numero_livre}}</span>
-      </div>
-
-      <div class=photoitem>
-        <img class="photo" data-src="{{page.numero_livre}}.jpg" src="print/assets/img/placeholder.gif" alt="" />
       </div>
 
     </div>

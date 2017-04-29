@@ -2,9 +2,9 @@ this["troc"] = this["troc"] || {};
 this["troc"]["all_static_tickets"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var alias1=container.lambda, alias2=container.escapeExpression;
 
-  return "    <!-- badge -->\n    <div class=\"ticket ticket--badge\">\n\n      <figure>\n        <img src=\"print/assets/img/logo-quiproquo.svg\">\n        <figcaption>\n          #3 Paris\n        </figcaption>\n      </figure>\n\n      <p>\n        Rendez-vous <br>\n        le dimanche 30 avril 2017 <br>\n        de 16 à 18 heures <br>\n        et sur www.la-bibliotheque.de/quiproquo\n      </p>\n\n      <p class=\"number\">"
+  return "    <!-- badge -->\n    <div class=\"ticket ticket--badge\">\n\n      <figure>\n        <img src=\"print/assets/img/logo-quiproquo.svg\">\n        <figcaption>\n          #3 Paris\n        </figcaption>\n      </figure>\n\n      <p class=\"text\">\n        Rendez-vous <br>\n        le dimanche 30.04.17 <br>\n        de 16 à 18 heures <br>\n      </p>\n\n      <p class=\"number\">"
     + alias2(alias1(depth0, depth0))
-    + "</p>\n\n    </div>\n\n    <!-- stock -->\n    <div class=\"ticket ticket--stock\">\n\n      <p class=\"number\">"
+    + "</p>\n\n      <p class=\"address\">\n        www.la-bibliotheque.de/quiproquo\n      </p>\n\n    </div>\n\n    <!-- stock -->\n    <div class=\"ticket ticket--stock\">\n\n      <p class=\"number\">"
     + alias2(alias1(depth0, depth0))
     + "</p>\n\n    </div>\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
@@ -69,7 +69,7 @@ this["troc"]["list_index"] = Handlebars.template({"1":function(container,depth0,
 
   return "\n      <div class=\"photoitem\">\n        <img class=\"photo\" data-src=\""
     + alias4(((helper = (helper = helpers.numero_livre || (depth0 != null ? depth0.numero_livre : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"numero_livre","hash":{},"data":data}) : helper)))
-    + ".jpg\" src=\"print/assets/img/placeholder.gif\" alt=\"\" />\n        <p class=\"cote\">"
+    + ".jpg\" src=\"print/assets/img/placeholder.gif\" alt=\"\" />\n        <p class=\"cote\">3."
     + alias4(((helper = (helper = helpers.numero_livre || (depth0 != null ? depth0.numero_livre : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"numero_livre","hash":{},"data":data}) : helper)))
     + "."
     + alias4(((helper = (helper = helpers.largeur || (depth0 != null ? depth0.largeur : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"largeur","hash":{},"data":data}) : helper)))
@@ -85,7 +85,7 @@ this["troc"]["list_index"] = Handlebars.template({"1":function(container,depth0,
 },"4":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "\n    <div class=\"legende\">\n      <p class=\"cote\">"
+  return "\n    <div class=\"legende\">\n      <p class=\"cote\">3."
     + alias4(((helper = (helper = helpers.numero_livre || (depth0 != null ? depth0.numero_livre : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"numero_livre","hash":{},"data":data}) : helper)))
     + "."
     + alias4(((helper = (helper = helpers.largeur || (depth0 != null ? depth0.largeur : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"largeur","hash":{},"data":data}) : helper)))
@@ -126,72 +126,37 @@ this["troc"]["list_index"] = Handlebars.template({"1":function(container,depth0,
 this["troc"]["ours"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     return "<section class=\"page page-default page-ours page-ours--odd\">\n  <div class=\"content\">\n\n\n  </div>\n</section>\n\n<section class=\"page page-default page-ours page-ours--even\">\n  <div class=\"content\">\n\n    <h3>Ours</h3>\n\n    <p>\n      Avec la participation de l’EESAB - Rennes, l’ENSBA - Lyon, l’ERG - Bruxelles, l’ESAD - Valence, la HEAD - Genève, la HEAR - Strasbourg/Mulhouse, l’ISBA - Besançon, l’isdaT - Toulouse, LISAA - Strasbourg, le Lycée Gutenberg - Illkirch, le Pôle Supérieur de Design Le Corbusier - Illkirch, l’Université des arts visuels – Strasbourg, l’UQAM - Montréal.\n    </p>\n\n    <p>\n      Scénographie et catalogue réalisés lors d’un workshop d’Angeline Ostinelli et Julien Gargot avec les étudiants du DSAA inSituLab, Florent Alexandre, Koulma Bilger, Pétronille Camphuis, Sophie Chialva, Solène Dietz, Juliette Ganteille, Célia Galipaud, Thomas Huard, Suzanne Husson, Elín-Margot Höskuldsson, Pauline Molina, Morgane Marin, Mathilde Richard, Maeva Tobalagba et Mélodie Valverde.\n    </p>\n\n    <p>\n      Avec le soutien de Fedrigoni, la HEAR et le Pôle Supérieur de Design Le Corbusier\n    </p>\n\n    <p class=\"small\">\n      Le texte est composé avec le Clear Sans de Neil Summerour, téléchargeable à l’adresse: https://clear.positype.com <br>\n      La mise en page de ce document a été fabriqué\n      automatiquement par <em>Pantoufle</em>, un programme de Julien Gargot,\n      à partir d’un formulaire en ligne. https://github.com/g-u-i/quiproquo\n    </p>\n\n    <p class=\"small\">\n      Côte : N<sup>o</sup> du live. Largeur. Hauteur. Nbre de pages. Couleur. Nbr d’exemplaires<br>\n      Code Couleur: C = Couleur / NB = Noir et blanc / + = Autres.\n    </p>\n\n  </div>\n</section>\n";
 },"useData":true});
+this["troc"]["test"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<section class=\"page page-ticket\">\n  <div class=\"content\">\n\n    <div class=\"ticket ticket--message\">\n      \n    </div>\n\n</section>\n";
+},"useData":true});
 this["troc"]["ticket"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=container.lambda, alias2=container.escapeExpression;
 
-  return "<section class=\"page page-ticket\">\n  <div class=\"content\">\n\n    <!-- stock -->\n    <div class=\"ticket ticket--stock\">\n\n      <div class=\"id\">\n        <img src=\"../home/etapes-qpq03.svg\">\n        <span class=\"huge\">"
+  return "<section class=\"page page-ticket\">\n  <div class=\"content\">\n\n    <div class=\"reverse\">\n\n      <!-- expo -->\n      <div class=\"ticket ticket--expo\">\n\n        <figure class=\"thumb\">\n          <img class=\"cover\" data-src=\""
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
-    + "</span>\n      </div>\n\n      <div class=photoitem>\n        <img class=\"photo\" data-src=\""
-    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
-    + ".jpg\" src=\"print/assets/img/placeholder.gif\" alt=\"\" />\n      </div>\n\n    </div>\n\n    <!-- expo -->\n    <div class=\"ticket ticket--expo\">\n\n      <div class=\"id\">\n        <span class=\"huge\">"
-    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
-    + "</span>\n        <img src=\"../home/etapes-qpq04.svg\">\n      </div>\n\n      <div class=photoitem>\n        <img class=\"photo\" data-src=\""
-    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
-    + ".jpg\" src=\"print/assets/img/placeholder.gif\" alt=\"\" />\n      </div>\n\n      <div class=legende>\n        <p class=\"cote\">"
-    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
-    + "."
-    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.largeur : stack1), depth0))
-    + "."
-    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.hauteur : stack1), depth0))
-    + "."
-    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.nombre_de_pages : stack1), depth0))
-    + "."
-    + ((stack1 = (helpers.colorCode || (depth0 && depth0.colorCode) || helpers.helperMissing).call(depth0 != null ? depth0 : {},((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.mode_colorimetrique : stack1),{"name":"colorCode","hash":{},"data":data})) != null ? stack1 : "")
-    + "."
-    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.nombre_d_exemplaires : stack1), depth0))
-    + "</p>\n        <p class=\"nom\">"
+    + ".jpg\" src=\"print/assets/img/placeholder.gif\" alt=\"\" />\n        </figure>\n\n        <p class=\"authors\">"
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.auteur : stack1), depth0))
-    + "</p>\n        <p class=\"titre\">"
+    + "</p>\n        <p class=\"title\"><em>"
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.titre : stack1), depth0))
+    + "</em></p>\n\n        <p class=\"city\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.ville_d_impression : stack1), depth0))
+    + ", "
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.annee : stack1), depth0))
     + "</p>\n        <p class=\"pagenb\">"
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.nombre_de_pages : stack1), depth0))
-    + "p</p>\n\n        <p class=\"city\">"
-    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.ville_d_impression : stack1), depth0))
-    + "</p>\n        <p class=\"date\">"
-    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.annee : stack1), depth0))
-    + "</p>\n        <p class=\"size\">"
+    + " pages</p>\n        <p class=\"size\">"
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.largeur : stack1), depth0))
-    + "×"
+    + " × "
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.hauteur : stack1), depth0))
-    + "mm</p>\n        <p class=\"technic\">"
+    + " mm</p>\n        <p class=\"nb\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.nombre_d_exemplaires : stack1), depth0))
+    + " exemplaires</p>\n        <p class=\"technic\">"
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.technique_d_impression : stack1), depth0))
-    + ", "
+    + "</p>\n        <p class=\"colormode\">"
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.mode_colorimetrique : stack1), depth0))
     + "</p>\n        <p class=\"reliure\">"
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.reliure : stack1), depth0))
-    + "</p>\n      </div>\n\n    </div>\n\n    <!-- badge -->\n    <div class=\"ticket ticket--badge\">\n\n      <div class=\"id\">\n        <img src=\"../home/etapes-qpq01.svg\">\n        <span class=\"huge\">"
+    + "</p>\n\n        <p class=\"id\">"
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
-    + "</span>\n      </div>\n\n      <div class=photoitem>\n        <img class=\"photo\" data-src=\""
-    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
-    + ".jpg\" src=\"print/assets/img/placeholder.gif\" alt=\"\" />\n      </div>\n\n    </div>\n\n    <!-- monaie -->\n    <div class=\"ticket ticket--monaie\">\n\n      <div class=\"id\">\n        <img src=\"../home/etapes-qpq06.svg\">\n        <span class=\"huge\">"
-    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
-    + "</span>\n      </div>\n\n      <div class=photoitem>\n        <img class=\"photo\" data-src=\""
-    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
-    + ".jpg\" src=\"print/assets/img/placeholder.gif\" alt=\"\" />\n      </div>\n\n    </div>\n    <div class=\"ticket ticket--monaie\">\n\n      <div class=\"id\">\n        <img src=\"../home/etapes-qpq06.svg\">\n        <span class=\"huge\">"
-    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
-    + "</span>\n      </div>\n\n      <div class=photoitem>\n        <img class=\"photo\" data-src=\""
-    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
-    + ".jpg\" src=\"print/assets/img/placeholder.gif\" alt=\"\" />\n      </div>\n\n    </div>\n    <div class=\"ticket ticket--monaie\">\n\n      <div class=\"id\">\n        <img src=\"../home/etapes-qpq06.svg\">\n        <span class=\"huge\">"
-    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
-    + "</span>\n      </div>\n\n      <div class=photoitem>\n        <img class=\"photo\" data-src=\""
-    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
-    + ".jpg\" src=\"print/assets/img/placeholder.gif\" alt=\"\" />\n      </div>\n\n    </div>\n    <div class=\"ticket ticket--monaie\">\n\n      <div class=\"id\">\n        <img src=\"../home/etapes-qpq06.svg\">\n        <span class=\"huge\">"
-    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
-    + "</span>\n      </div>\n\n      <div class=photoitem>\n        <img class=\"photo\" data-src=\""
-    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
-    + ".jpg\" src=\"print/assets/img/placeholder.gif\" alt=\"\" />\n      </div>\n\n    </div>\n    <div class=\"ticket ticket--monaie\">\n\n      <div class=\"id\">\n        <img src=\"../home/etapes-qpq06.svg\">\n        <span class=\"huge\">"
-    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
-    + "</span>\n      </div>\n\n      <div class=photoitem>\n        <img class=\"photo\" data-src=\""
-    + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
-    + ".jpg\" src=\"print/assets/img/placeholder.gif\" alt=\"\" />\n      </div>\n\n    </div>\n\n  </div>\n</section>\n";
+    + "</p>\n\n      </div>\n      .\n      <!-- badge -->\n      <div class=\"ticket ticket--badge\">\n\n        <figure>\n          <img src=\"print/assets/img/logo-quiproquo.svg\">\n          <figcaption>\n            #3 Paris\n          </figcaption>\n        </figure>\n\n        <p class=\"text\">\n          Rendez-vous <br>\n          le dimanche 30.04.17 <br>\n          de 16 à 18 heures <br>\n        </p>\n\n        <p class=\"address\">\n          www.la-bibliotheque.de/quiproquo\n        </p>\n\n      </div>\n\n    </div>\n\n  </div>\n</section>\n";
 },"useData":true});

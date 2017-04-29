@@ -1,10 +1,20 @@
 // Params
-var registrations = 'https://docs.google.com/spreadsheets/d/1ymMzDeEbL34H5cVXFY9lVzfKJhmkFVjWpdUySuW5zYM/pubhtml'
+var registrations = 'https://docs.google.com/spreadsheets/d/1-9n_Zlapcpjd54ykTbHXbXPGaY-YjhDPAyvig_S2F7Q/pubhtml'
 var exchanges = ''
 
 var images_path = 'print/photos/';
 var images_registration_folder = 'index/';
 var images_exchange_folder = 'exchanges/';
+
+// Functions / JS
+Array.prototype.removeIf = function(callback) {
+  var i = this.length;
+  while (i--) {
+    if (callback(this[i], i)) {
+      this.splice(i, 1);
+    }
+  }
+};
 
 // Functions / Handlebars
 function init_catalogue() {
@@ -31,15 +41,18 @@ function init_ticket() {
 
   if( Number.isInteger( parseInt( hash ) ) ) {
 
-    $('body').addClass('ticket');
     // Add dynamics pages
     Tabletop.init({ key: registrations,
       callback: onRegistrationsLoadForTicket,
       simpleSheet: false })
 
-  } else {
+  } else if(hash!=="message") {
 
     createStaticTickets();
+
+  } else {
+
+    createTest();
 
   }
 
@@ -63,6 +76,7 @@ $.fn.updateImages = function(folder_path)
 
   });
 };
+
 $.fn.updateImagesUnknowed = function(folder_path)
 {
   return this.each(function() {
@@ -116,6 +130,36 @@ Handlebars.registerHelper('ifAnd', function(a, b, block)
     return block.fn(this); }
 });
 
+Handlebars.registerHelper('ifCond', function (v1, operator, v2, options)
+{
+
+  switch (operator) {
+    case '==':
+      return (v1 == v2) ? options.fn(this) : options.inverse(this);
+    case '===':
+      return (v1 === v2) ? options.fn(this) : options.inverse(this);
+    case '!=':
+      return (v1 != v2) ? options.fn(this) : options.inverse(this);
+    case '!==':
+      return (v1 !== v2) ? options.fn(this) : options.inverse(this);
+    case '<':
+      return (v1 < v2) ? options.fn(this) : options.inverse(this);
+    case '<=':
+      return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+    case '>':
+      return (v1 > v2) ? options.fn(this) : options.inverse(this);
+    case '>=':
+      return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+    case '&&':
+      return (v1 && v2) ? options.fn(this) : options.inverse(this);
+    case '||':
+      return (v1 || v2) ? options.fn(this) : options.inverse(this);
+    default:
+      return options.inverse(this);
+  }
+
+});
+
 Handlebars.registerHelper('firstChar', function(a)
 {
   var s = a.charAt(0);
@@ -165,6 +209,9 @@ function dataCleanup(payload)
   })
 }
 
+function isNumeroLivreEmpty(element, index) {
+  return element.numero_livre === "" ? true : false;
+}
 
 
 // --------- On init ---------
@@ -204,6 +251,13 @@ function createStaticTickets(){
   );
 }
 
+function createTest(){
+  console.log('createTest?');
+  $('body').addClass('ticket').html(
+    troc.test()
+  );
+}
+
 
 
 // --------- On load ---------
@@ -212,6 +266,9 @@ function onRegistrationsLoad(payload){
 
   // var informations = dataCleanup( payload['Contenus Froids'].elements );
   var data = dataCleanup( payload['Réponses au formulaire 1'].elements );
+
+  // Remove non-registred books.
+  data.removeIf(isNumeroLivreEmpty);
 
   // Prepare pages
   // 12 books per page
@@ -228,6 +285,8 @@ function onRegistrationsLoad(payload){
 function onRegistrationsLoadForTicket(payload){
   console.log('REGISTRATIONS FOR TICKET', payload); //Object { Contenus Froids: Object, Réponses au formulaire: Object }
 
+  $('body').addClass('ticket');
+
   var data = dataCleanup( payload['Réponses au formulaire 1'].elements );
   var wantedBook = parseInt( window.location.hash.replace( /[^\d.]/g, '') );
   var page = null;
@@ -243,7 +302,7 @@ function onRegistrationsLoadForTicket(payload){
     troc.ticket({page:page})
   );
 
-  $('.page-ticket img.photo').updateImages(images_path + images_registration_folder);
+  $('.page-ticket img.cover').updateImages(images_path + images_registration_folder);
 
 }
 
