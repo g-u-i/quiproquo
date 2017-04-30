@@ -1,0 +1,44 @@
+<section class="page page-ticket">
+  <div class="content">
+
+    {{#loop number}}
+    <!-- badge -->
+    <div class="ticket ticket--badge ticket--troc">
+
+      <figure>
+        <img src="print/assets/img/logo-quiproquo.svg">
+        <figcaption>
+          #3 Paris
+        </figcaption>
+      </figure>
+
+      <p class="text">
+        Dimanche 30.04.17 <br>
+      </p>
+
+    </div>
+    <!-- expo -->
+    <div class="ticket ticket--expo ticket--troc">
+
+      <p class="authors">{{../page.auteur}}</p>
+      <p class="title"><em>{{../page.titre}}</em></p>
+
+      <p class="city">{{../page.ville_d_impression}}, {{../page.annee}}</p>
+      <p class="pagenb">{{../page.nombre_de_pages}} pages</p>
+      <p class="size">{{../page.largeur}} × {{../page.hauteur}} mm</p>
+      <p class="nb">{{../page.nombre_d_exemplaires}} exemplaires</p>
+      <p class="technic">{{../page.technique_d_impression}}</p>
+      <p class="colormode">{{../page.mode_colorimetrique}}</p>
+      <p class="reliure">{{../page.reliure}}</p>
+
+      <p class="id">{{../page.numero_livre}}</p>
+
+      <p class="address">
+        www.la-bibliotheque.de/quiproquo
+      </p>
+
+    </div>
+    {{/loop}}
+
+  </div>
+</section>

@@ -160,3 +160,38 @@ this["troc"]["ticket"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":f
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.page : depth0)) != null ? stack1.numero_livre : stack1), depth0))
     + "</p>\n\n      </div>\n      .\n      <!-- badge -->\n      <div class=\"ticket ticket--badge\">\n\n        <figure>\n          <img src=\"print/assets/img/logo-quiproquo.svg\">\n          <figcaption>\n            #3 Paris\n          </figcaption>\n        </figure>\n\n        <p class=\"text\">\n          Rendez-vous <br>\n          le dimanche 30.04.17 <br>\n          de 16 à 18 heures <br>\n        </p>\n\n        <p class=\"address\">\n          www.la-bibliotheque.de/quiproquo\n        </p>\n\n      </div>\n\n    </div>\n\n  </div>\n</section>\n";
 },"useData":true});
+this["troc"]["ticket_troc"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data,blockParams,depths) {
+    var stack1, alias1=container.lambda, alias2=container.escapeExpression;
+
+  return "    <!-- badge -->\n    <div class=\"ticket ticket--badge ticket--troc\">\n\n      <figure>\n        <img src=\"print/assets/img/logo-quiproquo.svg\">\n        <figcaption>\n          #3 Paris\n        </figcaption>\n      </figure>\n\n      <p class=\"text\">\n        Dimanche 30.04.17 <br>\n      </p>\n\n    </div>\n    <!-- expo -->\n    <div class=\"ticket ticket--expo ticket--troc\">\n\n      <p class=\"authors\">"
+    + alias2(alias1(((stack1 = (depths[1] != null ? depths[1].page : depths[1])) != null ? stack1.auteur : stack1), depth0))
+    + "</p>\n      <p class=\"title\"><em>"
+    + alias2(alias1(((stack1 = (depths[1] != null ? depths[1].page : depths[1])) != null ? stack1.titre : stack1), depth0))
+    + "</em></p>\n\n      <p class=\"city\">"
+    + alias2(alias1(((stack1 = (depths[1] != null ? depths[1].page : depths[1])) != null ? stack1.ville_d_impression : stack1), depth0))
+    + ", "
+    + alias2(alias1(((stack1 = (depths[1] != null ? depths[1].page : depths[1])) != null ? stack1.annee : stack1), depth0))
+    + "</p>\n      <p class=\"pagenb\">"
+    + alias2(alias1(((stack1 = (depths[1] != null ? depths[1].page : depths[1])) != null ? stack1.nombre_de_pages : stack1), depth0))
+    + " pages</p>\n      <p class=\"size\">"
+    + alias2(alias1(((stack1 = (depths[1] != null ? depths[1].page : depths[1])) != null ? stack1.largeur : stack1), depth0))
+    + " × "
+    + alias2(alias1(((stack1 = (depths[1] != null ? depths[1].page : depths[1])) != null ? stack1.hauteur : stack1), depth0))
+    + " mm</p>\n      <p class=\"nb\">"
+    + alias2(alias1(((stack1 = (depths[1] != null ? depths[1].page : depths[1])) != null ? stack1.nombre_d_exemplaires : stack1), depth0))
+    + " exemplaires</p>\n      <p class=\"technic\">"
+    + alias2(alias1(((stack1 = (depths[1] != null ? depths[1].page : depths[1])) != null ? stack1.technique_d_impression : stack1), depth0))
+    + "</p>\n      <p class=\"colormode\">"
+    + alias2(alias1(((stack1 = (depths[1] != null ? depths[1].page : depths[1])) != null ? stack1.mode_colorimetrique : stack1), depth0))
+    + "</p>\n      <p class=\"reliure\">"
+    + alias2(alias1(((stack1 = (depths[1] != null ? depths[1].page : depths[1])) != null ? stack1.reliure : stack1), depth0))
+    + "</p>\n\n      <p class=\"id\">"
+    + alias2(alias1(((stack1 = (depths[1] != null ? depths[1].page : depths[1])) != null ? stack1.numero_livre : stack1), depth0))
+    + "</p>\n\n      <p class=\"address\">\n        www.la-bibliotheque.de/quiproquo\n      </p>\n\n    </div>\n";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data,blockParams,depths) {
+    var stack1;
+
+  return "<section class=\"page page-ticket\">\n  <div class=\"content\">\n\n"
+    + ((stack1 = (helpers.loop || (depth0 && depth0.loop) || helpers.helperMissing).call(depth0 != null ? depth0 : {},(depth0 != null ? depth0.number : depth0),{"name":"loop","hash":{},"fn":container.program(1, data, 0, blockParams, depths),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "\n  </div>\n</section>\n";
+},"useData":true,"useDepths":true});

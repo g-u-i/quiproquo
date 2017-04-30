@@ -39,14 +39,21 @@ function init_ticket() {
 
   var hash = window.location.hash.replace(/^#/, '');
 
-  if( Number.isInteger( parseInt( hash ) ) ) {
+  if(/^display-\d+/.test(hash)) {
 
     // Add dynamics pages
     Tabletop.init({ key: registrations,
       callback: onRegistrationsLoadForTicket,
       simpleSheet: false })
 
-  } else if(hash!=="message") {
+  } else if(/^troc-\d+-\d+/.test(hash)) {
+
+    // Add dynamics pages
+    Tabletop.init({ key: registrations,
+      callback: onRegistrationsLoadForTicketTroc,
+      simpleSheet: false })
+
+  } else if(/^stock/.test(hash)) {
 
     createStaticTickets();
 
@@ -288,7 +295,8 @@ function onRegistrationsLoadForTicket(payload){
   $('body').addClass('ticket');
 
   var data = dataCleanup( payload['Réponses au formulaire 1'].elements );
-  var wantedBook = parseInt( window.location.hash.replace( /[^\d.]/g, '') );
+  var ints = window.location.hash.match(/\d+/g);
+  var wantedBook = parseInt( ints[0] );
   var page = null;
 
   $(data).each(function(i) {
@@ -300,6 +308,33 @@ function onRegistrationsLoadForTicket(payload){
 
   $('body').html(
     troc.ticket({page:page})
+  );
+
+  $('.page-ticket img.cover').updateImages(images_path + images_registration_folder);
+
+}
+
+function onRegistrationsLoadForTicketTroc(payload){
+  console.log('REGISTRATIONS FOR TICKET TROC', payload); //Object { Contenus Froids: Object, Réponses au formulaire: Object }
+
+  $('body').addClass('ticket');
+
+  var data = dataCleanup( payload['Réponses au formulaire 1'].elements );
+  var ints = window.location.hash.match(/\d+/g);
+  var wantedBook = parseInt( ints[0] );
+  var number = parseInt( ints[1] );
+
+  var page = null;
+
+  $(data).each(function(i) {
+    if ( this.numero_livre == wantedBook) {
+      page = this;
+      return false;
+    }
+  });
+
+  $('body').html(
+    troc.ticket_troc({page:page,number:number})
   );
 
   $('.page-ticket img.cover').updateImages(images_path + images_registration_folder);

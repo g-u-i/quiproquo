@@ -380,6 +380,7 @@ body {
 .page-ticket .ticket {
   border-bottom: 1pt dashed #1A1A1A;
   padding-bottom: 7mm;
+  position: relative;
 }
 .page-ticket .ticket + .ticket {
   margin-top: 7mm;
@@ -456,10 +457,37 @@ body {
   font-weight: 700;
   text-align: right;
   position: absolute;
-  bottom: 14mm;
+  bottom: 0;
   width: 43mm;
 }
-.page-ticket .ticket--expo + .ticket--badge {
+.page-ticket .ticket--message {
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  font-weight: 700;
+  font-size: 112pt;
+  height: 66cm;
+}
+.page-ticket .ticket--troc p.id {
+  position: static;
+}
+.page-ticket .ticket--troc:last-of-type {
+  padding-bottom: 0 !important;
+}
+.page-ticket .ticket--badge.ticket--troc {
+  border-bottom: none;
+  padding-bottom: 0 !important;
+}
+.reverse {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column-reverse;
+  flex-flow: column-reverse;
+}
+.reverse > * {
+  height: 130mm;
+}
+.reverse .ticket--expo + .ticket--badge {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-flow: column;
@@ -472,23 +500,6 @@ body {
   padding-bottom: 0;
   -ms-flex-pack: end;
   justify-content: flex-end;
-}
-.page-ticket .ticket--message {
-  -webkit-writing-mode: vertical-rl;
-  -ms-writing-mode: tb-rl;
-  writing-mode: vertical-rl;
-  font-weight: 700;
-  font-size: 112pt;
-  height: 66cm;
-}
-.reverse {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-flow: column-reverse;
-  flex-flow: column-reverse;
-}
-.reverse > * {
-  height: 130mm;
 }
 @media screen {
   body {
