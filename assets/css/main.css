@@ -192,9 +192,19 @@
  * ---------------------------------------------------------------------------*/
 body {
   font-family: "Clear Sans", sans-serif;
+  font-weight: 400;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+  font-weight: 400;
 }
 .index {
-  height: 25 7mm;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -211,95 +221,91 @@ body {
   margin: 0;
 }
 .index .photoitem {
-  margin: 0 7mm 13mm 0;
+  margin: 0 8mm 8mm 0;
+}
+.index .photoitem:nth-child(4n) {
+  margin-bottom: 0;
 }
 .index .photoitem p {
-  margin-top: 0;
-  width: 52mm;
   white-space: nowrap;
-  overflow: hidden;
+  overflow: visible;
+  -ms-transform: translate(0.9em, -1.8em);
+  transform: translate(0.9em, -1.8em);
+  height: 0;
+  color: #fff;
 }
 .index .photoitem .photo {
-  width: 52mm;
-  height: 34mm;
+  display: block;
+  width: 82mm;
+  height: 58mm;
   background-color: silver;
+  object-fit: cover;
 }
 .index .titre {
   color: #1A1A1A;
+  font-weight: 700;
 }
 .index .nom,
 .index .city {
   text-transform: capitalize;
 }
 .index .cote {
-  font-weight: bold;
   text-transform: uppercase;
+  font-weight: 700;
 }
 .index .legende {
-  width: 52mm;
-  margin-right: 7mm;
+  width: 82mm;
+  margin-right: 8mm;
   border-bottom: dashed 1pt #1A1A1A;
-  padding-bottom: 7mm;
-  margin-bottom: 7mm;
+  padding-bottom: 8mm;
+  margin-bottom: 8mm;
 }
 .index .pagenb {
   margin-bottom: 1em;
 }
+.page-cover {
+  background: url("../img/QPQ3-couv.jpg") no-repeat right center;
+  background-size: auto 100%;
+}
 .page-cover h1 {
-  font-weight: bold;
-  font-size: 140pt;
+  font-size: 132pt;
   position: absolute;
   -ms-transform-origin: 0 0;
   transform-origin: 0 0;
   -ms-transform: rotate(270deg);
   transform: rotate(270deg);
-  bottom: -0.9em;
+  bottom: -0.6em;
   line-height: 1;
-  left: 0;
+  left: 10mm;
   margin: 0;
   text-transform: uppercase;
 }
 .page-cover h2 {
-  font-weight: bold;
-  font-size: 140pt;
+  font-size: 132pt;
   margin: 0;
   line-height: 1;
-}
-.page-cover h3 {
-  font-weight: bold;
-  font-size: 37.452pt;
-  margin-bottom: 5mm;
-  margin-top: 0;
-}
-.page-cover h4 {
-  font-weight: medium;
-  font-size: 20pt;
-  margin: 0;
 }
 .page-cover .info {
   position: absolute;
   bottom: 16mm;
   right: 18mm;
 }
-.page-cover .gradient {
-  z-index: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 32.5%;
-  background-image: url("../img/trame1-hd.jpg");
-  background-repeat: repeat-y;
-  background-size: 307.69230769% auto;
-  background-position: left 0;
-}
 .page-edito {
   background-size: 100% auto;
   background-repeat: repeat-y;
 }
+.page-edito figure {
+  display: block;
+  position: absolute;
+  bottom: 12mm;
+  right: 20mm;
+  margin: 0;
+}
+.page-edito figure img {
+  width: 55mm;
+}
 .page-edito h3,
 .page-edito p {
-  font-weight: bold;
   font-size: 17pt;
   margin-left: 50mm;
 }
@@ -311,11 +317,9 @@ body {
   margin-top: 0;
   margin-bottom: 5mm;
 }
-.page-edito--odd {
-  background-image: url("../img/trame3-hd.jpg");
-}
-.page-edito--even {
-  background-image: url("../img/trame4-hd.jpg");
+.page-edito p.small {
+  font-size: 9pt;
+  margin-bottom: .5em;
 }
 .page-ours {
   background-size: 100% auto;
@@ -323,12 +327,10 @@ body {
 }
 .page-ours h3,
 .page-ours p {
-  font-weight: bold;
   font-size: 17pt;
-  color: #fff;
   margin-top: 0;
-  margin-bottom: 7mm;
-  margin-left: 50mm;
+  margin-bottom: 8mm;
+  margin-right: 50mm;
 }
 .page-ours h3:last-child,
 .page-ours p:last-child {
@@ -338,41 +340,26 @@ body {
   font-size: 9pt;
   margin-bottom: .5em;
 }
-.page-ours--odd {
-  background-image: url("https://framapic.org/99hakISC9rLm/l6Q87lGlW849.jpg");
-}
-.page-ours--even {
-  background-image: url("https://framapic.org/vaMtNEJJ9yLA/213V4m9jkbin.jpg");
+.page-backcover {
+  background: url("../img/QPQ3-couv.jpg") no-repeat left center;
+  background-size: auto 100%;
 }
 .page-backcover .logo {
   width: 45%;
   height: auto;
   position: absolute;
-  bottom: 7mm;
+  bottom: 8mm;
   left: 20mm;
 }
 .page-backcover h3,
 .page-backcover h4 {
-  font-weight: medium;
   font-size: 17pt;
-  margin: 0 0 7mm 0;
+  margin: 0 0 8mm 0;
 }
 .page-backcover .info {
   position: absolute;
   left: 20mm;
   top: 20mm;
-}
-.page-backcover .gradient {
-  z-index: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 32.5%;
-  background-image: url("../img/trame2-hd.jpg");
-  background-repeat: repeat-y;
-  background-size: 307.69230769% auto;
-  background-position: right 0;
 }
 .page-ticket {
   font-size: 6.75pt;

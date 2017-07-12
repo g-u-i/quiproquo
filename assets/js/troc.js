@@ -6,6 +6,8 @@ var images_path = 'print/photos/';
 var images_registration_folder = 'index/';
 var images_exchange_folder = 'exchanges/';
 
+var books_per_pages = 8;
+
 // Functions / JS
 Array.prototype.removeIf = function(callback) {
   var i = this.length;
@@ -279,7 +281,7 @@ function onRegistrationsLoad(payload){
 
   // Prepare pages
   // 12 books per page
-  var pages = _.chunk(data, 12);
+  var pages = _.chunk(data, books_per_pages);
 
   $('.page-edito--even').last().after(
     troc.list_index({pages:pages})
